@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/user_details/user_details.dart';
-
+import 'package:gitapp/users_list/User_card.dart';
+import 'package:gitapp/users_list/user.dart';
+import 'package:gitapp/users_list/users_list.dart';
 void main() {
   runApp(MyApp());
 }
@@ -10,20 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+      title: 'Gitapp',
+      theme: ThemeData.dark().copyWith(
+        primaryColor: Color(0xFF2D239F),
+        scaffoldBackgroundColor: Color(0xFF313EBB),
+
+        brightness: Brightness.dark
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Gitapp'),
     );
   }
 }
@@ -46,19 +42,81 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   int _counter = 0;
+  final List<ProfileCard> _card = <ProfileCard>[];
+  final UsersList users = new UsersList();
+  String name = "";
+  final TextEditingController _textController = new TextEditingController();
+  bool searching =  false;
 
-  void _incrementCounter() {
+  Future _getUsers(String text) async {
+    users.createUsers();
+    _card.clear();
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+      searching = true;
     });
+   if(text!=null)
+     {
+       name= text;
+       _textController.clear();
+       users.GetSearchedUsers(text);
+       if(users.searchedlist !=  null)
+       {
+
+         for (User user in users.searchedlist)
+         {
+           ProfileCard card = new ProfileCard(
+             user:user.username,
+             image: user.avatarUrl,
+
+
+             animationController: new AnimationController(
+               duration: new Duration(milliseconds: 700),
+               vsync: this,
+             ),
+           );
+           print(user.username);
+           setState(() {
+             _card.insert(0, card);
+           });
+           card.animationController.forward();
+         }
+       }
+     }
   }
+  void dispose() {
+    for (ProfileCard message in _card)
+      message.animationController.dispose();
+    super.dispose();
+  }
+    Widget _buildTextComposer() {
+      return new IconTheme(
+          data: new IconThemeData(color: Theme.of(context).accentColor),
+          child: new Container(
+            margin: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: new Row(children: <Widget>[
+              new Flexible(
+                child: new TextField(
+                  controller: _textController,
+                  onSubmitted: _getUsers,
+                  cursorColor: Colors.blueGrey,
+                  decoration:
+                  new InputDecoration.collapsed(hintText: "Enter Github Username"),
+                ),
+              ),
+              new Container(
+                  margin: new EdgeInsets.symmetric(horizontal: 4.0),
+                  child: new IconButton(
+                      icon: new Icon(Icons.search),
+                      onPressed: () => _getUsers(_textController.text)
+                  )
+              ),
+            ]),
+          )
+      );
+    }
+
 
   @override
   Widget build(BuildContext context) {
@@ -74,36 +132,25 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        body: new Container(
+          child: new Column(
+              children: <Widget>[
+                new Container(
+                  decoration: new BoxDecoration(
+                      color: Theme.of(context).cardColor),
+                  child: _buildTextComposer(),
+                ),
+                new Divider(height: 2.0),
+                new Flexible(
+                    child: new ListView.builder(
+                      padding: new EdgeInsets.all(8.0),
+                      itemBuilder: (_, int index) => _card[index],
+                      itemCount: _card.length,
+                    )
+                ),
+              ]
+          ),
         ),
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
