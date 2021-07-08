@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     setState(() {
       searching = true;
     });
-   if(text!=null)
+   if(text!="")
      {
        name= text;
        _textController.clear();
