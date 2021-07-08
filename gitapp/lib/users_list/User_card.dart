@@ -31,7 +31,17 @@ class ProfileCard extends StatelessWidget {
                   children: <Widget>[
                     new Container(
                       margin: const EdgeInsets.only(right:16.0),
-                      child: new Image.network(image,width: 100.0,height: 100.0,),
+                      height: 150.0,
+                      width: 150.0,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(width: 3.0, color: Colors.white),
+                        image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image: NetworkImage(image),
+                        ),
+                      ),
+                     
                     ),
                     new Expanded(
                       child: new Column(
