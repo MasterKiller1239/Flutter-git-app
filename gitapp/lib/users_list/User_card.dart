@@ -41,7 +41,7 @@ class ProfileCard extends StatelessWidget {
                           image: NetworkImage(image),
                         ),
                       ),
-                     
+
                     ),
                     new Expanded(
                       child: new Column(
