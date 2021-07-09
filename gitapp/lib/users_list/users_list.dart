@@ -1,4 +1,5 @@
 import 'package:gitapp/users_list/user.dart';
+//Lists of the users FGA-3
 class UsersList {
   List<User> userlist= List.empty(growable: true);
   List<User> searchedlist= List.empty(growable: true);

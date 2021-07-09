@@ -27,6 +27,7 @@
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/users_list/User_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/User_card.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/users_list/user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/users_list/users_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/users_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

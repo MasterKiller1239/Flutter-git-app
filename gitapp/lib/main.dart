@@ -43,7 +43,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-  int _counter = 0;
+  //FGA-3
   final List<UserCard> _card = <UserCard>[];
   final UsersList users = new UsersList();
   String name = "";
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                vsync: this,
              ),
            );
-          
+
            setState(() {
              _card.insert(0, card);
            });
@@ -96,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           child: new Container(
             margin: const EdgeInsets.symmetric(horizontal: 8.0),
             child: new Row(children: <Widget>[
+              //FGA-4
               new Flexible(
                 child: new TextField(
                   controller: _textController,

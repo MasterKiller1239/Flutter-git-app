@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_details.dart';
+
+//card of the user FGA-3
 class UserCard extends StatelessWidget {
   UserCard({required this.user,required this.image,  required this.animationController});
 
