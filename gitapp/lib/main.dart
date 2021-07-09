@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   bool searching =  false;
 
   Future _getUsers(String text) async {
-    
+
     _card.clear();
     setState(() {
       searching = true;
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                vsync: this,
              ),
            );
-           print(user.username);
+          
            setState(() {
              _card.insert(0, card);
            });

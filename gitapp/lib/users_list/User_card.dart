@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_details.dart';
 class UserCard extends StatelessWidget {
   UserCard({required this.user,required this.image,  required this.animationController});
@@ -19,7 +20,7 @@ class UserCard extends StatelessWidget {
         child: new Container(
           margin: EdgeInsets.only(bottom: 20.0),
           child: new RaisedButton(
-              color: Colors.blueGrey,
+              color: secondaryLight,
               onPressed: (){
                 Navigator.push(context, new MaterialPageRoute(builder: (context) =>  DetailScreen()));
               },
