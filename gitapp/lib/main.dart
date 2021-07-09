@@ -44,7 +44,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   int _counter = 0;
-  final List<ProfileCard> _card = <ProfileCard>[];
+  final List<UserCard> _card = <UserCard>[];
   final UsersList users = new UsersList();
   String name = "";
   final TextEditingController _textController = new TextEditingController();
@@ -61,12 +61,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
        name= text;
        _textController.clear();
        users.GetSearchedUsers(text);
-       if(users.searchedlist !=  null)
+       if(users.searchedlist !=null)
        {
 
          for (User user in users.searchedlist)
          {
-           ProfileCard card = new ProfileCard(
+           UserCard card = new UserCard(
              user:user.username,
              image: user.avatarUrl,
 
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
      }
   }
   void dispose() {
-    for (ProfileCard message in _card)
+    for (UserCard message in _card)
       message.animationController.dispose();
     super.dispose();
   }

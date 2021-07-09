@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/user_details/user_details.dart';
-class ProfileCard extends StatelessWidget {
-  ProfileCard({required this.user,required this.image,  required this.animationController});
+class UserCard extends StatelessWidget {
+  UserCard({required this.user,required this.image,  required this.animationController});
 
 
   final String user;
