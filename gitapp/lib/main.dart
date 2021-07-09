@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   bool searching =  false;
 
   Future _getUsers(String text) async {
-    users.createUsers();
+    
     _card.clear();
     setState(() {
       searching = true;
