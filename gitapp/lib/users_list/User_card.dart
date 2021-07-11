@@ -24,7 +24,7 @@ class UserCard extends StatelessWidget {
           child: new RaisedButton(
               color: secondaryLight,
               onPressed: (){
-                Navigator.push(context, new MaterialPageRoute(builder: (context) =>  DetailScreen()));
+                Navigator.push(context, new MaterialPageRoute(builder: (context) =>  DetailScreen(user: user, image: image)));
               },
               child: new Container(
                 padding: EdgeInsets.symmetric(vertical: 12.0),
