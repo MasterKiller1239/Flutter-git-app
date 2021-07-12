@@ -20,14 +20,14 @@ class DetailScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget> [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget> [
                   Column(
                     children: <Widget> [
                       Container(
-                        height: 150.0,
-                        width: 150.0,
+                        height: 130.0,
+                        width: 130.0,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(width: 3.0, color: Colors.yellowAccent),
@@ -41,95 +41,121 @@ class DetailScreen extends StatelessWidget {
                       Text(
                         user,
                         style: TextStyle(
-                          fontSize: 24.0,
+                          fontSize: 20.0,
                         ),
                       ),
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: 35.0),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget> [
+                  Container(
+                    child: Column(
+                      children: <Widget> [
+                        SizedBox(height: 20.0),
+                        Container(
+                          padding: EdgeInsets.all(4.0),
+                          child: Text(
+                            'INFO',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.yellowAccent,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(6.0),
+                            border: Border.all(width: 1.0, color: Colors.yellowAccent),
+                          ),
+                        ),
+                        SizedBox(height: 15.0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  'Followers',
+                                  style: TextStyle(
+                                    fontSize: 13.0,
+                                    letterSpacing: 2.0,
+                                  ),
+                                ),
+                                SizedBox(height: 5.0),
+                                Text(
+                                  '89',
+                                  style: TextStyle(
+                                    fontSize: 11.0,
+                                    letterSpacing: 1.0,
+                                    color: Colors.yellow,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(width: 10.0),
+                            Column(
+                              children: [
+                                Text(
+                                  'Repositories',
+                                  style: TextStyle(
+                                    fontSize: 13.0,
+                                    letterSpacing: 2.0,
+                                  ),
+                                ),
+                                SizedBox(height: 5.0),
+                                Text(
+                                  '3',
+                                  style: TextStyle(
+                                    fontSize: 11.0,
+                                    letterSpacing: 1.0,
+                                    color: Colors.yellow,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(width: 10.0),
+                            Column(
+                              children: [
+                                Text(
+                                  'Country',
+                                  style: TextStyle(
+                                    fontSize: 13.0,
+                                    letterSpacing: 2.0,
+                                  ),
+                                ),
+                                SizedBox(height: 5.0),
+                                Text(
+                                  'Poland',
+                                  style: TextStyle(
+                                    fontSize: 11.0,
+                                    letterSpacing: 1.0,
+                                    color: Colors.yellow,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 45.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget> [
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget> [
                       Container(
-                        child: Text(
-                          'INFO',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.yellowAccent,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6.0),
-                          border: Border.all(width: 3.0, color: Colors.yellowAccent),
-                        ),
-                      ),
-                      SizedBox(height: 15.0),
-                      Column(
-                        children: [
-                          Text(
-                            'Followers',
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              letterSpacing: 2.0,
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Text(
-                            '89',
-                            style: TextStyle(
-                              fontSize: 14.0,
-                              letterSpacing: 1.0,
-                              color: Colors.yellow,
-                            ),
-                          ),
-                          SizedBox(height: 12.5),
-                          Text(
-                            'Repositories',
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              letterSpacing: 2.0,
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Text(
-                            '3',
-                            style: TextStyle(
-                              fontSize: 14.0,
-                              letterSpacing: 1.0,
-                              color: Colors.yellow,
-                            ),
-                          ),
-                          SizedBox(height: 12.5),
-                          Text(
-                            'Country',
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              letterSpacing: 2.0,
-                            ),
-                          ),
-                          SizedBox(height: 5.0),
-                          Text(
-                            'Poland',
-                            style: TextStyle(
-                              fontSize: 14.0,
-                              letterSpacing: 1.0,
-                              color: Colors.yellow,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(width: 50.0),
-                  Column(
-                    children: <Widget> [
-                      Container(
+                        padding: EdgeInsets.all(4.0),
                         child: Text(
                           'REPOSITORIES',
                           style: TextStyle(
@@ -140,24 +166,25 @@ class DetailScreen extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(6.0),
-                          border: Border.all(width: 3.0, color: Colors.yellowAccent),
+                          border: Border.all(width: 1.0, color: Colors.yellowAccent),
                         ),
                       ),
-                      SizedBox(height: 15.0),
+                      SizedBox(height: 35.0),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
-                            height: 30.0,
-                            width: 140.0,
+                            padding:  EdgeInsets.all(10.0),
+                            height: 60.0,
+                            width: 300.0,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(5.0),
                             ),
                             child: Center(
                               child: Text(
-                                'FlutterApp',
+                                'https://github.com/user4/FlutterApp',
                                 style: TextStyle(
                                   fontSize: 14.0,
                                   letterSpacing: 2.0,
@@ -168,34 +195,16 @@ class DetailScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 10.0),
                           Container(
-                            height: 30.0,
-                            width: 140.0,
+                            padding:  EdgeInsets.all(10.0),
+                            height: 60.0,
+                            width: 300.0,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(5.0),
                             ),
                             child: Center(
                               child: Text(
-                                'SwiftApp',
-                                style: TextStyle(
-                                  fontSize: 14.0,
-                                  letterSpacing: 2.0,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 10.0),
-                          Container(
-                            height: 30.0,
-                            width: 140.0,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            child: Center(
-                              child: Text(
-                                'C#Programm',
+                                'https://github.com/user4/SwiftApp',
                                 style: TextStyle(
                                   fontSize: 14.0,
                                   letterSpacing: 2.0,
