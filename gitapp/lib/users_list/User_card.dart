@@ -2,38 +2,44 @@ import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_details.dart';
 
-//card of the user FGA-3
-class UserCard extends StatelessWidget {
-  UserCard({required this.user,required this.image,  required this.animationController});
 
+class UserCard extends StatelessWidget {
+  UserCard(
+      {required this.user,
+      required this.image,
+      required this.animationController});
 
   final String user;
   final String image;
 
   final AnimationController animationController;
+
   @override
   Widget build(BuildContext context) {
-    return new SizeTransition(
-        sizeFactor: new CurvedAnimation(
+    return  SizeTransition(
+        sizeFactor:  CurvedAnimation(
           parent: animationController,
           curve: Curves.linear,
         ),
         axisAlignment: 0.0,
-        child: new Container(
+        child:  Container(
           margin: EdgeInsets.only(bottom: 20.0),
-          child: new RaisedButton(
+          child:  RaisedButton(
               color: secondaryLight,
-              onPressed: (){
-                Navigator.push(context, new MaterialPageRoute(builder: (context) =>  DetailScreen()));
+              onPressed: () {
+                Navigator.push(
+                    context,
+                     MaterialPageRoute(
+                        builder: (context) => DetailScreen()));
               },
-              child: new Container(
+              child:  Container(
                 padding: EdgeInsets.symmetric(vertical: 12.0),
                 margin: const EdgeInsets.only(right: 5.0),
-                child: new Row(
+                child:  Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    new Container(
-                      margin: const EdgeInsets.only(right:16.0),
+                     Container(
+                      margin: const EdgeInsets.only(right: 16.0),
                       height: 150.0,
                       width: 150.0,
                       decoration: BoxDecoration(
@@ -44,26 +50,21 @@ class UserCard extends StatelessWidget {
                           image: NetworkImage(image),
                         ),
                       ),
-
                     ),
-                    new Expanded(
-                      child: new Column(
+                     Expanded(
+                      child:  Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          new Text(
-                              user,
-                              style: Theme.of(context).textTheme.title
-                          ),
-                          new Padding(padding: EdgeInsets.only(bottom: 24.0)),
-
+                           Text(user,
+                              style: Theme.of(context).textTheme.title),
+                           Padding(padding: EdgeInsets.only(bottom: 24.0)),
                         ],
                       ),
                     ),
                   ],
                 ),
-              )
-          ),
-        )
-    );
+              )),
+        ));
   }
+
 }

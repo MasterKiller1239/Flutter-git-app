@@ -1,45 +1,45 @@
+import 'package:flutter/material.dart';
 import 'package:gitapp/users_list/user.dart';
-//Lists of the users FGA-3
+import "package:http/http.dart" as http;
+import 'dart:convert' as convert;
+
 class UsersList {
-  List<User> userlist= List.empty(growable: true);
-  List<User> searchedlist= List.empty(growable: true);
-  UsersList(){
-    for(int i=0;i<5;i++)
-    {
+  List<User> userlist = List.empty(growable: true);
+  List<User> searchedlist = List.empty(growable: true);
 
-      User user = new User(
-          avatarUrl: 'https://i.kym-cdn.com/entries/icons/original/000/035/310/Peepo_Animation_Banner.jpg',
-          username: "User"+i.toString());
-      userlist.add(user);
-    }
-
+  UsersList() {
+    List<String> usersnames = ['Tytus', 'Romek','Atomek', 'Bolek', 'Lolek'];
+    userlist = usersnames
+        .map((name) => User(
+            username: name,
+            avatarUrl:
+                'https://i.kym-cdn.com/entries/icons/original/000/035/310/Peepo_Animation_Banner.jpg'))
+        .toList();
   }
 
-void createUsers()  {
-  userlist.clear();
-for(int i=0;i<5;i++)
-  {
+  void fetchUsers(String username) async {
+    String httpadress =
+        'https://api.github.com/search/users?q=$username&per_page=5';
 
-    User user = new User(
-        avatarUrl: 'https://i.kym-cdn.com/entries/icons/original/000/035/310/Peepo_Animation_Banner.jpg',
-        username: "User"+i.toString());
-    userlist.add(user);
+    searchedlist.clear();
+    http.Response response = await http.get(Uri.parse(httpadress));
+    if (response.statusCode == 200) {
+      var data = convert.jsonDecode(response.body);
+      print(data.toString());
+
+      data['items'].forEach((user) {
+        searchedlist.add(User.fromJSON(user));
+      });
+    }
+    print(searchedlist.length.toString());
   }
 
+  void fillSearchedUsers(String text) {
+    searchedlist.clear();
 
-}
-
-  void GetSearchedUsers(String text)
-  {
-
-      searchedlist.clear();
-    for (User user in userlist)
-    {
-      if(user.username.toLowerCase().contains(text.toLowerCase())) {
-        searchedlist.add(user);
-      }
-    }
-
-
+    searchedlist = userlist
+        .where((element) =>
+            element.username.toLowerCase().contains(text.toLowerCase()))
+        .toList();
   }
 }
