@@ -17,7 +17,7 @@ class UsersList {
         .toList();
   }
 
-  void fetchUsers(String username) async {
+  Future<bool> fetchUsers(String username) async {
     String httpadress =
         'https://api.github.com/search/users?q=$username&per_page=5';
 
@@ -25,13 +25,14 @@ class UsersList {
     http.Response response = await http.get(Uri.parse(httpadress));
     if (response.statusCode == 200) {
       var data = convert.jsonDecode(response.body);
-      print(data.toString());
+
 
       data['items'].forEach((user) {
         searchedlist.add(User.fromJSON(user));
       });
+      return true;
     }
-    print(searchedlist.length.toString());
+    return false;
   }
 
   void fillSearchedUsers(String text) {

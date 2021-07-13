@@ -26,15 +26,15 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   Future _getUsers(String text) async {
     _card.clear();
-    setState(() {
-      searching = true;
-    });
+
     if (text != "") {
       name = text;
       _textController.clear();
-      users.fillSearchedUsers(text);
 
-      print(users.searchedlist.length);
+      users.fillSearchedUsers(text);
+         //users.fetchUsers(text);
+
+
       if (users.searchedlist.length != 0) {
         users.searchedlist.forEach((element) {
           setState(() {
