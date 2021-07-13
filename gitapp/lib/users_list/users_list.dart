@@ -8,7 +8,7 @@ class UsersList {
   List<User> searchedlist = List.empty(growable: true);
 
   UsersList() {
-    List<String> usersnames = ['Tytus', 'Romek','Atomek', 'Bolek', 'Lolek'];
+    List<String> usersnames = ['Tytus', 'Romek', 'Atomek', 'Bolek', 'Lolek'];
     userlist = usersnames
         .map((name) => User(
             username: name,

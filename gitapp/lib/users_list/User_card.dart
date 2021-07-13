@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_details.dart';
 
-
 class UserCard extends StatelessWidget {
   UserCard(
       {required this.user,
@@ -16,29 +15,27 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SizeTransition(
-        sizeFactor:  CurvedAnimation(
+    return SizeTransition(
+        sizeFactor: CurvedAnimation(
           parent: animationController,
           curve: Curves.linear,
         ),
         axisAlignment: 0.0,
-        child:  Container(
+        child: Container(
           margin: EdgeInsets.only(bottom: 20.0),
-          child:  RaisedButton(
+          child: RaisedButton(
               color: secondaryLight,
               onPressed: () {
-                Navigator.push(
-                    context,
-                     MaterialPageRoute(
-                        builder: (context) => DetailScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DetailScreen()));
               },
-              child:  Container(
+              child: Container(
                 padding: EdgeInsets.symmetric(vertical: 12.0),
                 margin: const EdgeInsets.only(right: 5.0),
-                child:  Row(
+                child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                     Container(
+                    Container(
                       margin: const EdgeInsets.only(right: 16.0),
                       height: 150.0,
                       width: 150.0,
@@ -51,13 +48,12 @@ class UserCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                     Expanded(
-                      child:  Column(
+                    Expanded(
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                           Text(user,
-                              style: Theme.of(context).textTheme.title),
-                           Padding(padding: EdgeInsets.only(bottom: 24.0)),
+                          Text(user, style: Theme.of(context).textTheme.title),
+                          Padding(padding: EdgeInsets.only(bottom: 24.0)),
                         ],
                       ),
                     ),
@@ -66,5 +62,4 @@ class UserCard extends StatelessWidget {
               )),
         ));
   }
-
 }

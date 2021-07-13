@@ -50,7 +50,6 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
           });
           _card[0].animationController.forward();
         });
-
       }
     }
   }
@@ -71,7 +70,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
               child: new TextField(
                 controller: _textController,
                 onSubmitted: _getUsers,
-                cursorColor: Colors.blueGrey,
+                cursorColor: cursorColor,
                 decoration: new InputDecoration.collapsed(
                     hintText: "Enter Github Username"),
               ),
