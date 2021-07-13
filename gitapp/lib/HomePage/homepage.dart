@@ -17,7 +17,6 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  //FGA-3
   List<UserCard> _card = <UserCard>[];
   final UsersList users = new UsersList();
   String name = "";
@@ -31,9 +30,8 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       name = text;
       _textController.clear();
 
-      users.fillSearchedUsers(text);
-         //users.fetchUsers(text);
-
+      //users.fillSearchedUsers(text);
+      await users.fetchUsers(text);
 
       if (users.searchedlist.length != 0) {
         users.searchedlist.forEach((element) {
@@ -65,7 +63,6 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: new Container(
           margin: const EdgeInsets.symmetric(horizontal: 8.0),
           child: new Row(children: <Widget>[
-            //FGA-4
             new Flexible(
               child: new TextField(
                 controller: _textController,
