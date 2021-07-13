@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gitapp/user_details/user_details.dart';
 import 'package:gitapp/users_list/User_card.dart';
 import 'package:gitapp/users_list/user.dart';
 import 'package:gitapp/users_list/users_list.dart';
@@ -134,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: Text(widget.title),
       ),
         body: new Container(
-          child: new Column(
+    child: new Column(
               children: <Widget>[
                 new Container(
                   decoration: new BoxDecoration(

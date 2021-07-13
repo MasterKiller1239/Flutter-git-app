@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
-import 'package:gitapp/user_details/user_details.dart';
+import 'package:gitapp/user_details/details_home.dart';
 
 //card of the user FGA-3
 class UserCard extends StatelessWidget {
@@ -24,7 +24,7 @@ class UserCard extends StatelessWidget {
           child: new RaisedButton(
               color: secondaryLight,
               onPressed: (){
-                Navigator.push(context, new MaterialPageRoute(builder: (context) =>  DetailScreen(user: user, image: image)));
+                Navigator.push(context, new MaterialPageRoute(builder: (context) =>  DetailScreen(user: user)));
               },
               child: new Container(
                 padding: EdgeInsets.symmetric(vertical: 12.0),

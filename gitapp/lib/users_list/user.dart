@@ -4,6 +4,4 @@ class User {
   String avatarUrl;
 
   User({required this.avatarUrl, required this.username});
-
-
 }
