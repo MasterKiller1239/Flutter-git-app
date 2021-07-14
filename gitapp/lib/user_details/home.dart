@@ -53,174 +53,216 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       body: Container(
         padding: EdgeInsets.all(30.0),
         child:  Column(
+          children: [
+            ListView.builder(
+                        padding: EdgeInsets.all(8.0),
+                        shrinkWrap: true,
+                        itemBuilder: (context, index){
+                          mock.reposList[index];
+                          return RepoListItem();
+                        },
+                        itemCount: _card.length,
+                      ),
+          ],
+        )
+      ),
+    );
+  }
+
+}
+
+class RepoListItem extends StatelessWidget {
+  const RepoListItem({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text("data");
+  }
+}
+
+class FirstIdeaWidget extends StatelessWidget {
+  const FirstIdeaWidget({
+    Key? key,
+    required this.mock,
+    required this.user,
+    required List<RepoCard> card,
+  }) : _card = card, super(key: key);
+
+  final DetailsMock mock;
+  final String user;
+  final List<RepoCard> _card;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget> [
+        Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget> [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Column(
               children: <Widget> [
-                Column(
-                  children: <Widget> [
-                    Container(
-                      height: 130.0,
-                      width: 130.0,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(width: 3.0, color: yyellow),
-                        image: DecorationImage(
-                          fit: BoxFit.fill,
-                          image: NetworkImage(mock.getDetails(user).avatarUrl),
-                        ),
-                      ),
+                Container(
+                  height: 130.0,
+                  width: 130.0,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(width: 3.0, color: yyellow),
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: NetworkImage(mock.getDetails(user).avatarUrl),
                     ),
-                    SizedBox(height: 15.0),
-                    Text(
-                      mock.getDetails(user).username,
-                      style: TextStyle(
-                        fontSize: 20.0,
-                      ),
-                    ),
-                  ],
+                  ),
+                ),
+                SizedBox(height: 15.0),
+                Text(
+                  mock.getDetails(user).username,
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
                 ),
               ],
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget> [
-                Container(
-                  child: Column(
-                    children: <Widget> [
-                      SizedBox(height: 20.0),
-                      Container(
-                        padding: EdgeInsets.all(4.0),
-                        child: Text(
-                          'INFO',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            color: yyellow,
-                            letterSpacing: 1.5,
-                          ),
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6.0),
-                          border: Border.all(width: 1.0, color: yyellow),
-                        ),
+          ],
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget> [
+            Container(
+              child: Column(
+                children: <Widget> [
+                  SizedBox(height: 20.0),
+                  Container(
+                    padding: EdgeInsets.all(4.0),
+                    child: Text(
+                      'INFO',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: yyellow,
+                        letterSpacing: 1.5,
                       ),
-                      SizedBox(height: 15.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6.0),
+                      border: Border.all(width: 1.0, color: yyellow),
+                    ),
+                  ),
+                  SizedBox(height: 15.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Column(
                         children: [
-                          Column(
-                            children: [
-                              Text(
-                                'Followers',
-                                style: TextStyle(
-                                  fontSize: 13.0,
-                                  letterSpacing: 2.0,
-                                ),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                mock.getDetails(user).followers,
-                                style: TextStyle(
-                                  fontSize: 11.0,
-                                  letterSpacing: 1.0,
-                                  color: yyellow,
-                                ),
-                              ),
-                            ],
+                          Text(
+                            'Followers',
+                            style: TextStyle(
+                              fontSize: 13.0,
+                              letterSpacing: 2.0,
+                            ),
                           ),
-                          SizedBox(width: 10.0),
-                          Column(
-                            children: [
-                              Text(
-                                'Repositories',
-                                style: TextStyle(
-                                  fontSize: 13.0,
-                                  letterSpacing: 2.0,
-                                ),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                mock.getDetails(user).repositoriesCount,
-                                style: TextStyle(
-                                  fontSize: 11.0,
-                                  letterSpacing: 1.0,
-                                  color: yyellow,
-                                ),
-                              ),
-                            ],
+                          SizedBox(height: 5.0),
+                          Text(
+                            mock.getDetails(user).followers,
+                            style: TextStyle(
+                              fontSize: 11.0,
+                              letterSpacing: 1.0,
+                              color: yyellow,
+                            ),
                           ),
-                          SizedBox(width: 10.0),
-                          Column(
-                            children: [
-                              Text(
-                                'Country',
-                                style: TextStyle(
-                                  fontSize: 13.0,
-                                  letterSpacing: 2.0,
-                                ),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                mock.getDetails(user).country,
-                                style: TextStyle(
-                                  fontSize: 11.0,
-                                  letterSpacing: 1.0,
-                                  color: yyellow,
-                                ),
-                              ),
-                            ],
+                        ],
+                      ),
+                      SizedBox(width: 10.0),
+                      Column(
+                        children: [
+                          Text(
+                            'Repositories',
+                            style: TextStyle(
+                              fontSize: 13.0,
+                              letterSpacing: 2.0,
+                            ),
+                          ),
+                          SizedBox(height: 5.0),
+                          Text(
+                            mock.getDetails(user).repositoriesCount,
+                            style: TextStyle(
+                              fontSize: 11.0,
+                              letterSpacing: 1.0,
+                              color: yyellow,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 10.0),
+                      Column(
+                        children: [
+                          Text(
+                            'Country',
+                            style: TextStyle(
+                              fontSize: 13.0,
+                              letterSpacing: 2.0,
+                            ),
+                          ),
+                          SizedBox(height: 5.0),
+                          Text(
+                            mock.getDetails(user).country,
+                            style: TextStyle(
+                              fontSize: 11.0,
+                              letterSpacing: 1.0,
+                              color: yyellow,
+                            ),
                           ),
                         ],
                       ),
                     ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-            SizedBox(height: 45.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
+          ],
+        ),
+        SizedBox(height: 45.0),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget> [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget> [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget> [
-                    Container(
-                      padding: EdgeInsets.all(4.0),
-                      child: Text(
-                        'REPOSITORIES',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          color: yyellow,
-                          letterSpacing: 1.5,
-                        ),
-                      ),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6.0),
-                        border: Border.all(width: 1.0, color: yyellow),
-                      ),
+                Container(
+                  padding: EdgeInsets.all(4.0),
+                  child: Text(
+                    'REPOSITORIES',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: yyellow,
+                      letterSpacing: 1.5,
                     ),
-                    SizedBox(height: 35.0),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          height: 150.0,
-                          width: 150.0,
-                          child: ListView.builder(
-                            padding: EdgeInsets.all(8.0),
-                            itemBuilder: (context, index) => _card[index],
-                            itemCount: _card.length,
-                          ),
-                        ),
-                      ],
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6.0),
+                    border: Border.all(width: 1.0, color: yyellow),
+                  ),
+                ),
+                SizedBox(height: 35.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 150.0,
+                      width: 150.0,
+                      child: ListView.builder(
+                        padding: EdgeInsets.all(8.0),
+                        itemBuilder: (context, index) => _card[index],
+                        itemCount: _card.length,
+                      ),
                     ),
                   ],
                 ),
@@ -228,8 +270,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             ),
           ],
         ),
-      ),
+      ],
     );
   }
-
 }
