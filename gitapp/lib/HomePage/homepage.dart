@@ -18,9 +18,9 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
   List<UserCard> _card = <UserCard>[];
-  final UsersList users = new UsersList();
+  final UsersList users = UsersList();
   String name = "";
-  final TextEditingController _textController = new TextEditingController();
+  final TextEditingController _textController = TextEditingController();
   bool searching = false;
 
   Future _getUsers(String text) async {
@@ -33,16 +33,16 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       //users.fillSearchedUsers(text);
       await users.fetchUsers(text);
 
-      if (users.searchedlist.length != 0) {
-        users.searchedlist.forEach((element) {
+      if (users.searchedList.length != 0) {
+        users.searchedList.forEach((element) {
           setState(() {
             _card.insert(
                 0,
                 UserCard(
                     user: element.username,
-                    image: element.avatarUrl,
-                    animationController: new AnimationController(
-                      duration: new Duration(milliseconds: animationtime),
+                    image: element.avatarURL,
+                    animationController: AnimationController(
+                      duration: Duration(milliseconds: animationTime),
                       vsync: this,
                     )));
           });
@@ -53,29 +53,32 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   void dispose() {
-    for (UserCard message in _card) message.animationController.dispose();
+    for (UserCard message in _card)
+      message.animationController.dispose();
     super.dispose();
   }
 
   Widget _buildTextComposer() {
-    return new IconTheme(
-        data: new IconThemeData(color: Theme.of(context).accentColor),
-        child: new Container(
+    return IconTheme(
+        data: IconThemeData(color: Theme
+            .of(context)
+            .accentColor),
+        child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: new Row(children: <Widget>[
-            new Flexible(
-              child: new TextField(
+          child: Row(children: <Widget>[
+            Flexible(
+              child: TextField(
                 controller: _textController,
                 onSubmitted: _getUsers,
                 cursorColor: cursorColor,
-                decoration: new InputDecoration.collapsed(
+                decoration: InputDecoration.collapsed(
                     hintText: "Enter Github Username"),
               ),
             ),
-            new Container(
-                margin: new EdgeInsets.symmetric(horizontal: 4.0),
-                child: new IconButton(
-                    icon: new Icon(Icons.search),
+            Container(
+                margin: EdgeInsets.symmetric(horizontal: 4.0),
+                child: IconButton(
+                    icon: Icon(Icons.search),
                     onPressed: () => _getUsers(_textController.text))),
           ]),
         ));
@@ -87,19 +90,21 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: new Container(
-        child: new Column(children: <Widget>[
-          new Container(
-            decoration: new BoxDecoration(color: Theme.of(context).cardColor),
+      body: Container(
+        child: Column(children: <Widget>[
+          Container(
+            decoration: BoxDecoration(color: Theme
+                .of(context)
+                .cardColor),
             child: _buildTextComposer(),
           ),
-          new Divider(height: 2.0),
-          new Flexible(
-              child: new ListView.builder(
-            padding: new EdgeInsets.all(8.0),
-            itemBuilder: (_, int index) => _card[index],
-            itemCount: _card.length,
-          )),
+          Divider(height: 2.0),
+          Flexible(
+              child: ListView.builder(
+                padding: EdgeInsets.all(8.0),
+                itemBuilder: (context, int index) => _card[index],
+                itemCount: _card.length,
+              )),
         ]),
       ),
       floatingActionButton: FloatingActionButton(

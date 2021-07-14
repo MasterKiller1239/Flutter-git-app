@@ -10,7 +10,6 @@ class UserCard extends StatelessWidget {
 
   final String user;
   final String image;
-
   final AnimationController animationController;
 
   @override
@@ -31,12 +30,12 @@ class UserCard extends StatelessWidget {
               },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 12.0),
-                margin: const EdgeInsets.only(right: 5.0),
+                margin: EdgeInsets.only(right: 5.0),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      margin: const EdgeInsets.only(right: 16.0),
+                      margin: EdgeInsets.only(right: 16.0),
                       height: 150.0,
                       width: 150.0,
                       decoration: BoxDecoration(
