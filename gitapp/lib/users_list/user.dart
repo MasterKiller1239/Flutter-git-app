@@ -1,7 +1,8 @@
 //class of the user FGA-3
 class User {
-  String username;
-  String avatarUrl;
+  final int id;
+  final String username;
+  final String avatarUrl;
 
-  User({required this.avatarUrl, required this.username});
+  User({required this.id, required this.avatarUrl, required this.username});
 }
