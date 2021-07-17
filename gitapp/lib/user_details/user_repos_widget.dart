@@ -4,9 +4,7 @@ import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
 import 'package:gitapp/user_details/user_repos_list_widget.dart';
 
-UserRepo repoMock = UserRepo(id: 12, url: 'https://github.com/user/flutterapp', name: 'flutterapp');
-
-Column userReposWidget() {
+Column userReposWidget(List<UserRepo> listRepos) {
   return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,8 +30,8 @@ Column userReposWidget() {
           width: 300.0,
           child: ListView.builder(
             padding: EdgeInsets.all(8.0),
-            itemBuilder: (context, index) => userReposListWidget(repoMock),
-            itemCount: 9,
+            itemBuilder: (context, index) => userReposListWidget(listRepos[index]),
+            itemCount: listRepos.length,
           ),
         ),
       ]

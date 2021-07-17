@@ -4,7 +4,9 @@ import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_details_model.dart';
 import 'package:gitapp/user_details/user_avatar_widget.dart';
 import 'package:gitapp/user_details/user_info_widget.dart';
+import 'package:gitapp/user_details/user_repo_model.dart';
 import 'package:gitapp/user_details/user_repos_widget.dart';
+import 'package:gitapp/user_details/user_details_presenter.dart';
 
 class DetailScreen extends StatelessWidget {
 
@@ -14,7 +16,8 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    UserDetails userMock = UserDetails(id: 1, avatarUrl: 'https://i.kym-cdn.com/entries/icons/original/000/035/310/Peepo_Animation_Banner.jpg', username: user, followersCount: 43, repositoriesCount: 3, country: 'Poland');
+    UserDetails mock = mockedInfo(user);
+    List<UserRepo> repo = mockedRepos(user);
 
     return Scaffold(
       appBar: AppBar(
@@ -23,10 +26,10 @@ class DetailScreen extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(height: 20.0),
-          userAvatarWidget(userMock),
-          userInfoWidget(userMock),
+          userAvatarWidget(mock),
+          userInfoWidget(mock),
           Divider(height: 35.0, color: yyellow, indent: 30.0, endIndent: 30.0),
-          userReposWidget(),
+          userReposWidget(repo),
         ]
       ),
     );
