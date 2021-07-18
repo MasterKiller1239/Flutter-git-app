@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_details.dart';
-import 'package:gitapp/users_list/User_card.dart';
+import 'package:gitapp/users_list/user_card.dart';
 
 import 'package:gitapp/users_list/users_list.dart';
 
@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  List<UserCard> _card = <UserCard>[];
+  List<userCard> _card = <userCard>[];
   final UsersList users = UsersList();
   String name = "";
   final TextEditingController _textController = TextEditingController();
@@ -34,35 +34,30 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       await users.fetchUsers(text);
 
       if (users.searchedList.length != 0) {
-        users.searchedList.forEach((element) {
-          setState(() {
-            _card.insert(
-                0,
-                UserCard(
-                    user: element.username,
-                    image: element.avatarURL,
-                    animationController: AnimationController(
-                      duration: Duration(milliseconds: animationTime),
-                      vsync: this,
-                    )));
-          });
-          _card[0].animationController.forward();
+        setState(() {
+          _card = users.searchedList
+              .map((element) => userCard(
+                  user: element.username,
+                  image: element.avatarURL,
+                  animationController: AnimationController(
+                    duration: Duration(milliseconds: animationTime),
+                    vsync: this,
+                  )))
+              .toList();
+          print(_card.length);
         });
       }
     }
   }
 
   void dispose() {
-    for (UserCard message in _card)
-      message.animationController.dispose();
+    for (userCard message in _card) message.animationController.dispose();
     super.dispose();
   }
 
   Widget _buildTextComposer() {
     return IconTheme(
-        data: IconThemeData(color: Theme
-            .of(context)
-            .accentColor),
+        data: IconThemeData(color: Theme.of(context).accentColor),
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Row(children: <Widget>[
@@ -93,18 +88,17 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       body: Container(
         child: Column(children: <Widget>[
           Container(
-            decoration: BoxDecoration(color: Theme
-                .of(context)
-                .cardColor),
+            decoration: BoxDecoration(color: Theme.of(context).cardColor),
             child: _buildTextComposer(),
           ),
           Divider(height: 2.0),
           Flexible(
               child: ListView.builder(
-                padding: EdgeInsets.all(8.0),
-                itemBuilder: (context, int index) => _card[index],
-                itemCount: _card.length,
-              )),
+            shrinkWrap: true,
+            padding: EdgeInsets.all(8.0),
+            itemBuilder: (context, int index) => _card[index],
+            itemCount: _card.length,
+          )),
         ]),
       ),
       floatingActionButton: FloatingActionButton(

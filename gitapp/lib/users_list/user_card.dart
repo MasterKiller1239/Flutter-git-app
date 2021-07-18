@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_details.dart';
 
-class UserCard extends StatelessWidget {
-  UserCard(
+class userCard extends StatelessWidget {
+  userCard(
       {required this.user,
       required this.image,
-      required this.animationController});
+      required this.animationController})
+  {
+    this.animationController.forward();
+  }
 
   final String user;
   final String image;
