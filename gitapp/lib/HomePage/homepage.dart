@@ -1,10 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_details.dart';
 import 'package:gitapp/users_list/user_card.dart';
-
 import 'package:gitapp/users_list/users_list.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,42 +15,20 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  List<userCard> _card = <userCard>[];
   final UsersList users = UsersList();
-  String name = "";
   final TextEditingController _textController = TextEditingController();
   bool searching = false;
 
   Future _getUsers(String text) async {
-    _card.clear();
-
     if (text != "") {
-      name = text;
-      _textController.clear();
 
       //users.fillSearchedUsers(text);
       await users.fetchUsers(text);
+      setState(() {
+        _textController.clear();
+      });
 
-      if (users.searchedList.length != 0) {
-        setState(() {
-          _card = users.searchedList
-              .map((element) => userCard(
-                  user: element.username,
-                  image: element.avatarURL,
-                  animationController: AnimationController(
-                    duration: Duration(milliseconds: animationTime),
-                    vsync: this,
-                  )))
-              .toList();
-          print(_card.length);
-        });
-      }
     }
-  }
-
-  void dispose() {
-    for (userCard message in _card) message.animationController.dispose();
-    super.dispose();
   }
 
   Widget _buildTextComposer() {
@@ -96,8 +72,9 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
               child: ListView.builder(
             shrinkWrap: true,
             padding: EdgeInsets.all(8.0),
-            itemBuilder: (context, int index) => _card[index],
-            itemCount: _card.length,
+            itemBuilder: (context, int index) =>
+                UserCard(user: users.searchedList[index]),
+            itemCount: users.searchedList.length,
           )),
         ]),
       ),
