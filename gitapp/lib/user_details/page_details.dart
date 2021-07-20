@@ -5,7 +5,7 @@ import 'package:gitapp/user_details/user_details_model.dart';
 import 'package:gitapp/user_details/user_avatar_widget.dart';
 import 'package:gitapp/user_details/user_info_widget.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
-import 'package:gitapp/user_details/user_repos_widget.dart';
+import 'package:gitapp/user_details/user_repos_list_widget.dart';
 import 'package:gitapp/user_details/user_details_presenter.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -16,8 +16,8 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    UserDetails mock = mockedInfo(user);
-    List<UserRepo> repo = mockedRepos(user);
+    UserDetails mock = getMockedInfo(user);
+    List<UserRepo> repo = getMockedRepos(user);
 
     return Scaffold(
       appBar: AppBar(
@@ -26,10 +26,10 @@ class DetailScreen extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(height: 20.0),
-          userAvatarWidget(mock),
-          userInfoWidget(mock),
+          UserAvatarWidget(username: mock.username, avatarUrl: mock.avatarUrl),
+          UserInfoWidget(followersCount: mock.followersCount, repositoriesCount: mock.repositoriesCount, country: mock.country),
           Divider(height: 35.0, color: yyellow, indent: 30.0, endIndent: 30.0),
-          userReposWidget(repo),
+          UserReposWidget(listRepos: repo),
         ]
       ),
     );
