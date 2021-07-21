@@ -26,15 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Added methods for mocked data">
-      <change afterPath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/user_details/details_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/users_list/user_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/page_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/page_details.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_avatar_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_avatar_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repos_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/User_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/User_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/HomePage/homepage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/HomePage/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
