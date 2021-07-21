@@ -19,3 +19,6 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+gitapp/.idea/libraries/Dart_Packages.xml
+gitapp/.idea/libraries/Dart_SDK.xml
+gitapp/.idea/workspace.xml
