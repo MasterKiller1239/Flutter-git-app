@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gitapp/users_list/User_card.dart';
+import 'package:gitapp/users_list/user_card.dart';
 import 'package:gitapp/users_list/user.dart';
 import 'package:gitapp/users_list/users_list.dart';
 void main() {
