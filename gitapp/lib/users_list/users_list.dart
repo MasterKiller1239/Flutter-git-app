@@ -11,9 +11,11 @@ class UsersList {
     List<String> usersNames = ['Tytus', 'Romek', 'Atomek', 'Bolek', 'Lolek'];
     userList = usersNames
         .map((name) => User(
-            username: name,
-            avatarURL:
-                'https://i.kym-cdn.com/entries/icons/original/000/035/310/Peepo_Animation_Banner.jpg'))
+              username: name,
+              avatarURL:
+                  'https://i.kym-cdn.com/entries/icons/original/000/035/310/Peepo_Animation_Banner.jpg',
+              id: 1,
+            ))
         .toList();
   }
 

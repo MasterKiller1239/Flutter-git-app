@@ -40,7 +40,6 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
             Flexible(
               child: TextField(
                 controller: _textController,
-                onSubmitted: _getUsers,
                 cursorColor: cursorColor,
                 decoration: InputDecoration.collapsed(
                     hintText: "Enter Github Username"),
@@ -73,7 +72,10 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
             shrinkWrap: true,
             padding: EdgeInsets.all(8.0),
             itemBuilder: (context, int index) =>
-                UserCard(user: users.searchedList[index]),
+                UserCard(user: users.searchedList[index], animationController: AnimationController(
+                  duration: new Duration(milliseconds: animationTime),
+                  vsync: this,
+                ),),
             itemCount: users.searchedList.length,
           )),
         ]),
