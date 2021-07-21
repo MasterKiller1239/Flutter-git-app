@@ -1,7 +1,5 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
-import 'package:gitapp/user_details/user_details.dart';
 import 'package:gitapp/users_list/user_card.dart';
 import 'package:gitapp/users_list/users_list.dart';
 
@@ -80,18 +78,6 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
           )),
         ]),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(),
-            ),
-          );
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
