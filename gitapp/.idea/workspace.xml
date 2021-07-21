@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
@@ -22,12 +25,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="">
+    <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Added methods for mocked data">
+      <change afterPath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/HomePage/homepage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/HomePage/homepage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/users_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/users_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/page_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/page_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_avatar_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_avatar_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repos_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/users_list/User_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/User_card.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +49,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="FGA-7-Merge-with-main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1uvm8rlJG90yKZbuMsO58vUr3QF" />
@@ -51,22 +63,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Flutter_bmi-master/android" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/user_details" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Flutter-git-app\gitapp\lib\users_list" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Flutter-git-app\gitapp\lib\images" />
+      <recent name="$PROJECT_DIR$/lib/user_details" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -78,6 +85,28 @@
       <option name="presentableId" value="Default" />
       <updated>1625554280852</updated>
     </task>
+    <task id="LOCAL-00001" summary="- Added details class&#10;- Added home class for the purpose of separating code&#10;- Added repo_card class for the purpose of showing list of repos&#10;Working on the correct displaying the list">
+      <created>1626183809598</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626183809598</updated>
+    </task>
+    <task id="LOCAL-00002" summary="- Added model classes for needed data&#10;- The code has been divided into separate files accordingly">
+      <created>1626519152376</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626519152376</updated>
+    </task>
+    <task id="LOCAL-00003" summary="- Added methods for mocked data">
+      <created>1626531153666</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1626531153666</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,50 +121,78 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Added details class&#10;- Added home class for the purpose of separating code&#10;- Added repo_card class for the purpose of showing list of repos&#10;Working on the correct displaying the list" />
+    <MESSAGE value="- Added model classes for needed data&#10;- The code has been divided into separate files accordingly" />
+    <MESSAGE value="- Added methods for mocked data" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added methods for mocked data" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1625558464799">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="414" y="189" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1626000503286">
+      <screen x="0" y="25" width="1920" height="972" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625558464799" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626768350834">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="414" y="189" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1920.972@0.25.1920.972" timestamp="1626000503286" />
+    <state x="705" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626517566360">
+      <screen x="0" y="25" width="1920" height="973" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626768350834" />
-    <state x="773" y="266" key="AndroidProcessChooserDialog" timestamp="1626776892555">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="705" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626517566360" />
+    <state x="705" y="263" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1920.975/-1440.205.1440.875@0.25.1920.975" timestamp="1626281061837" />
+    <state width="1482" height="249" key="GridCell.Tab.0.bottom" timestamp="1626788271062">
+      <screen x="0" y="25" width="1920" height="973" />
     </state>
-    <state x="773" y="266" key="AndroidProcessChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626776892555" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1626883244742">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1416" height="233" key="GridCell.Tab.0.bottom/0.-1055.1920.1055/0.25.1920.972@0.25.1920.972" timestamp="1626082438384" />
+    <state width="914" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1625554583800" />
+    <state width="1376" height="233" key="GridCell.Tab.0.bottom/0.25.1920.972@0.25.1920.972" timestamp="1626094084311" />
+    <state width="1482" height="249" key="GridCell.Tab.0.bottom/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626788271062" />
+    <state width="1362" height="242" key="GridCell.Tab.0.bottom/0.25.1920.975/-1440.205.1440.875@0.25.1920.975" timestamp="1626210848331" />
+    <state width="1482" height="249" key="GridCell.Tab.0.center" timestamp="1626788271061">
+      <screen x="0" y="25" width="1920" height="973" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1626883244742" />
-    <state width="938" height="204" key="GridCell.Tab.0.bottom" timestamp="1626885413548">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1416" height="233" key="GridCell.Tab.0.center/0.-1055.1920.1055/0.25.1920.972@0.25.1920.972" timestamp="1626082438382" />
+    <state width="914" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1625554583800" />
+    <state width="1376" height="233" key="GridCell.Tab.0.center/0.25.1920.972@0.25.1920.972" timestamp="1626094084310" />
+    <state width="1482" height="249" key="GridCell.Tab.0.center/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626788271061" />
+    <state width="1362" height="242" key="GridCell.Tab.0.center/0.25.1920.975/-1440.205.1440.875@0.25.1920.975" timestamp="1626210848330" />
+    <state width="1482" height="249" key="GridCell.Tab.0.left" timestamp="1626788271060">
+      <screen x="0" y="25" width="1920" height="973" />
     </state>
-    <state width="938" height="204" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1626885413548" />
-    <state width="938" height="204" key="GridCell.Tab.0.center" timestamp="1626885413548">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1416" height="233" key="GridCell.Tab.0.left/0.-1055.1920.1055/0.25.1920.972@0.25.1920.972" timestamp="1626082438381" />
+    <state width="914" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1625554583800" />
+    <state width="1376" height="233" key="GridCell.Tab.0.left/0.25.1920.972@0.25.1920.972" timestamp="1626094084310" />
+    <state width="1482" height="249" key="GridCell.Tab.0.left/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626788271060" />
+    <state width="1362" height="242" key="GridCell.Tab.0.left/0.25.1920.975/-1440.205.1440.875@0.25.1920.975" timestamp="1626210848330" />
+    <state width="1482" height="249" key="GridCell.Tab.0.right" timestamp="1626788271062">
+      <screen x="0" y="25" width="1920" height="973" />
     </state>
-    <state width="938" height="204" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1626885413548" />
-    <state width="938" height="204" key="GridCell.Tab.0.left" timestamp="1626885413548">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1416" height="233" key="GridCell.Tab.0.right/0.-1055.1920.1055/0.25.1920.972@0.25.1920.972" timestamp="1626082438383" />
+    <state width="914" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1625554583800" />
+    <state width="1376" height="233" key="GridCell.Tab.0.right/0.25.1920.972@0.25.1920.972" timestamp="1626094084311" />
+    <state width="1482" height="249" key="GridCell.Tab.0.right/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626788271062" />
+    <state width="1362" height="242" key="GridCell.Tab.0.right/0.25.1920.975/-1440.205.1440.875@0.25.1920.975" timestamp="1626210848331" />
+    <state x="461" y="179" key="SettingsEditor" timestamp="1626548482660">
+      <screen x="0" y="25" width="1920" height="973" />
     </state>
-    <state width="938" height="204" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1626885413548" />
-    <state width="938" height="204" key="GridCell.Tab.0.right" timestamp="1626885413548">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1625558531982" />
+    <state x="461" y="179" key="SettingsEditor/0.25.1920.972@0.25.1920.972" timestamp="1626000746260" />
+    <state x="461" y="179" key="SettingsEditor/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626548482660" />
+    <state x="308" y="236" key="Vcs.Push.Dialog.v2" timestamp="1626531155399">
+      <screen x="0" y="25" width="1920" height="973" />
     </state>
-    <state width="938" height="204" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1626885413548" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1626195142573">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="308" y="236" key="Vcs.Push.Dialog.v2/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626531155399" />
+    <state x="308" y="236" key="Vcs.Push.Dialog.v2/0.25.1920.975/-1440.205.1440.875@0.25.1920.975" timestamp="1626183811733" />
+    <state x="760" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1626624711362">
+      <screen x="0" y="25" width="1920" height="973" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1626195142573" />
-    <state x="1257" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1626022800826">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="760" y="429" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626624711362" />
+    <state x="760" y="430" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1920.975/-1440.205.1440.875@0.25.1920.975" timestamp="1626331956658" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1626177897024">
+      <screen x="0" y="25" width="1920" height="975" />
     </state>
-    <state x="1257" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1626022800826" />
-    <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1625911258734">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="600" height="428" key="javadoc.popup/0.25.1920.975/-1440.205.1440.875@0.25.1920.975" timestamp="1626177897024" />
+    <state x="405" y="239" width="670" height="676" key="search.everywhere.popup" timestamp="1626518536822">
+      <screen x="0" y="25" width="1920" height="973" />
     </state>
-    <state x="1103" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1625911258734" />
+    <state x="405" y="239" width="670" height="676" key="search.everywhere.popup/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626518536822" />
   </component>
 </project>
