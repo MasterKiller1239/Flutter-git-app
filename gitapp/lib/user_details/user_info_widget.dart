@@ -6,9 +6,9 @@ class UserInfoWidget extends StatelessWidget {
 
   final int followersCount;
   final int repositoriesCount;
-  final String country;
+  //final String country;
 
-  UserInfoWidget({required this.followersCount, required this.repositoriesCount, required this.country});
+  UserInfoWidget({required this.followersCount, required this.repositoriesCount, /*required this.country*/});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ class UserInfoWidget extends StatelessWidget {
                     ],
                   ),
                   SizedBox(width: 10.0),
-                  Column(
+                  /*Column(
                     children: [
                       Text(
                         'Country',
@@ -75,7 +75,7 @@ class UserInfoWidget extends StatelessWidget {
                         style: TextStyle(fontSize: 11.0, letterSpacing: 1.0, color: yyellow),
                       ),
                     ],
-                  ),
+                  ),*/
                 ],
               ),
             ],

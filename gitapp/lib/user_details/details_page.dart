@@ -10,15 +10,23 @@ import 'package:gitapp/user_details/user_details_presenter.dart';
 
 class DetailScreen extends StatelessWidget {
 
-  DetailScreen({required this.user});
-  final String user;
+  DetailScreen({required this.user_id});
+  final int user_id;
+
+  late UserDetails userDetails;
+  late List<UserRepo> reposList;
+
+  Future getUsers() async {
+    userDetails = await getInfoFromAPI(user_id);
+  }
+
+  Future getReposList() async {
+    reposList = await getReposListFromAPI(user_id);
+  }
 
   @override
   Widget build(BuildContext context) {
-
-    UserDetails mock = getMockedInfo(user);
-    List<UserRepo> repo = getMockedRepos(user);
-
+    
     return Scaffold(
       appBar: AppBar(
         title: Text("User details"),
@@ -26,10 +34,10 @@ class DetailScreen extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(height: 20.0),
-          UserAvatarWidget(username: mock.username, avatarUrl: mock.avatarUrl),
-          UserInfoWidget(followersCount: mock.followersCount, repositoriesCount: mock.repositoriesCount, country: mock.country),
+          UserAvatarWidget(username: userDetails.username, avatarUrl: userDetails.avatarUrl),
+          UserInfoWidget(followersCount: userDetails.followersCount, repositoriesCount: userDetails.repositoriesCount),
           Divider(height: 35.0, color: yyellow, indent: 30.0, endIndent: 30.0),
-          UserReposWidget(listRepos: repo),
+          UserReposWidget(listRepos: reposList),
         ]
       ),
     );

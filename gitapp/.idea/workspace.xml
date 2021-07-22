@@ -25,7 +25,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Added methods for mocked data" />
+    <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Added methods for mocked data">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/details_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/page_details.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repo_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repo_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user_card.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +67,10 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/user_details" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -126,6 +139,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merged FGA-7 with main" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="259" y="247" key="#PSD" timestamp="1626948743997">
+      <screen x="0" y="25" width="1920" height="973" />
+    </state>
+    <state x="259" y="247" key="#PSD/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626948743997" />
     <state x="414" y="189" width="1071" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1626000503286">
       <screen x="0" y="25" width="1920" height="972" />
     </state>
