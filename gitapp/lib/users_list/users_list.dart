@@ -21,7 +21,7 @@ class UsersList {
 
   Future<bool> fetchUsers(String username) async {
     String httpadress =
-        'https://api.github.com/search/users?q=$username&per_page=20';
+        'https://api.github.com/search/users?q=$username&per_page=100';
     searchedList.clear();
     http.Response response = await http.get(Uri.parse(httpadress));
     if (response.statusCode == 200) {
