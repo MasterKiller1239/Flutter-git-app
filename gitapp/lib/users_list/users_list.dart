@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gitapp/database_helper/database_helper.dart';
 import 'package:gitapp/users_list/user.dart';
 import "package:http/http.dart" as http;
 import 'dart:convert' as convert;
@@ -6,6 +7,8 @@ import 'dart:convert' as convert;
 class UsersList {
   List<User> userList = List.empty(growable: true);
   List<User> searchedList = List.empty(growable: true);
+  late List<User> databaseList = List.empty(growable: true);
+  static final UsersList instance = UsersList._init();
 
   UsersList() {
     List<String> usersNames = ['Tytus', 'Romek', 'Atomek', 'Bolek', 'Lolek'];
@@ -19,7 +22,9 @@ class UsersList {
         .toList();
   }
 
-  Future<bool> fetchUsers(String username) async {
+  UsersList._init();
+
+  Future<void> fetchUsers(String username) async {
     String httpadress =
         'https://api.github.com/search/users?q=$username&per_page=100';
     searchedList.clear();
@@ -27,11 +32,22 @@ class UsersList {
     if (response.statusCode == 200) {
       var data = convert.jsonDecode(response.body);
       data['items'].forEach((user) {
-        searchedList.add(User.fromJSON(user));
+        instance.searchedList.add(User.fromJSON(user));
       });
-      return true;
+
     }
-    return false;
+
+  }
+
+  Future<void> getDBUsersByName(String text) async {
+    instance.databaseList.clear();
+    instance.databaseList =
+        await DatabaseHandler.instance.getUsersFromDatabase(text);
+  }
+  Future<void> getAllDBUsers() async {
+    instance.databaseList.clear();
+    instance.databaseList =
+    await DatabaseHandler.instance.getAllUsers();
   }
 
   void fillSearchedUsersList(String text) {
