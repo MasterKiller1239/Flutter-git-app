@@ -4,14 +4,15 @@ import 'package:gitapp/database_helper/database_helper.dart';
 import 'package:gitapp/user_details/details_page.dart';
 import 'package:gitapp/users_list/user.dart';
 
-
 class UserCardDB extends StatefulWidget {
   UserCardDB({
     required this.user,
-    required this.animationController, required this.refreshDatabaseList,
+    required this.animationController,
+    required this.refreshDatabaseList,
   }) {
     this.animationController.forward();
   }
+
   final Function() refreshDatabaseList;
   final User user;
   final AnimationController animationController;
@@ -38,8 +39,11 @@ class _UserCardDBState extends State<UserCardDB> {
           child: RaisedButton(
               color: secondaryLight,
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DetailScreen(user: widget.user.username)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            DetailScreen(user: widget.user.username)));
               },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 12.0),
@@ -70,7 +74,13 @@ class _UserCardDBState extends State<UserCardDB> {
                         ],
                       ),
                     ),
-                    FloatingActionButton( child: Icon(Icons.clear),onPressed:() async {await DatabaseHandler.instance.deleteUser(widget.user.id); widget.refreshDatabaseList();})
+                    FloatingActionButton(
+                        child: Icon(Icons.clear),
+                        onPressed: () async {
+                          await DatabaseHandler.instance
+                              .deleteUser(widget.user.id);
+                          widget.refreshDatabaseList();
+                        })
                   ],
                 ),
               )),

@@ -7,10 +7,12 @@ import 'package:gitapp/users_list/user.dart';
 class UserCardApi extends StatefulWidget {
   UserCardApi({
     required this.user,
-    required this.animationController, required this.info,
+    required this.animationController,
+    required this.info,
   }) {
     this.animationController.forward();
   }
+
   final Function() info;
   final User user;
   final AnimationController animationController;
@@ -37,8 +39,11 @@ class _UserCardApiState extends State<UserCardApi> {
           child: RaisedButton(
               color: secondaryLight,
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DetailScreen(user: widget.user.username)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            DetailScreen(user: widget.user.username)));
               },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 12.0),
@@ -69,7 +74,13 @@ class _UserCardApiState extends State<UserCardApi> {
                         ],
                       ),
                     ),
-                    FloatingActionButton( child: Icon(Icons.add),onPressed:() async {await DatabaseHandler.instance.addUserToDatabase(widget.user);widget.info();})
+                    FloatingActionButton(
+                        child: Icon(Icons.add),
+                        onPressed: () async {
+                          await DatabaseHandler.instance
+                              .addUserToDatabase(widget.user);
+                          widget.info();
+                        })
                   ],
                 ),
               )),

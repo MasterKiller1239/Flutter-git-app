@@ -34,9 +34,7 @@ class UsersList {
       data['items'].forEach((user) {
         instance.searchedList.add(User.fromJSON(user));
       });
-
     }
-
   }
 
   Future<void> getDBUsersByName(String text) async {
@@ -44,10 +42,10 @@ class UsersList {
     instance.databaseList =
         await DatabaseHandler.instance.getUsersFromDatabase(text);
   }
+
   Future<void> getAllDBUsers() async {
     instance.databaseList.clear();
-    instance.databaseList =
-    await DatabaseHandler.instance.getAllUsers();
+    instance.databaseList = await DatabaseHandler.instance.getAllUsers();
   }
 
   void fillSearchedUsersList(String text) {

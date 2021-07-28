@@ -7,7 +7,9 @@ import 'package:gitapp/users_list/users_list.dart';
 
 class dbSearchView extends StatefulWidget {
   dbSearchView();
+
   final GlobalKey<dbSearchViewState> cartKey = GlobalKey();
+
   @override
   dbSearchViewState createState() => dbSearchViewState();
 }
@@ -33,13 +35,14 @@ class dbSearchViewState extends State<dbSearchView>
     DatabaseHandler.instance.getAllUsers();
     setState(() => searching = true);
 
-      await UsersList.instance.getAllDBUsers();
-      setState(() {
-        _textController.clear();
-      });
+    await UsersList.instance.getAllDBUsers();
+    setState(() {
+      _textController.clear();
+    });
 
     setState(() => searching = false);
   }
+
   @override
   void initState() {
     super.initState();
@@ -51,6 +54,7 @@ class dbSearchViewState extends State<dbSearchView>
 
     db.close();
   }
+
   Widget _buildTextComposer() {
     return IconTheme(
         data: IconThemeData(color: Theme.of(context).accentColor),
@@ -90,18 +94,21 @@ class dbSearchViewState extends State<dbSearchView>
                 ? Center(
                     child: CircularProgressIndicator(),
                   )
-                :UsersList.instance.databaseList.isEmpty?emptyListView() : ListView.builder(
-                    shrinkWrap: true,
-                    padding: EdgeInsets.all(8.0),
-                    itemBuilder: (context, int index) => UserCardDB(
-                      user: UsersList.instance.databaseList[index],
-                      animationController: AnimationController(
-                        duration: new Duration(milliseconds: animationTime),
-                        vsync: this,
-                      ), refreshDatabaseList: getAllUsersFromDB,
-                    ),
-                    itemCount: UsersList.instance.databaseList.length,
-                  )),
+                : UsersList.instance.databaseList.isEmpty
+                    ? emptyListView()
+                    : ListView.builder(
+                        shrinkWrap: true,
+                        padding: EdgeInsets.all(8.0),
+                        itemBuilder: (context, int index) => UserCardDB(
+                          user: UsersList.instance.databaseList[index],
+                          animationController: AnimationController(
+                            duration: new Duration(milliseconds: animationTime),
+                            vsync: this,
+                          ),
+                          refreshDatabaseList: getAllUsersFromDB,
+                        ),
+                        itemCount: UsersList.instance.databaseList.length,
+                      )),
       ]),
     );
   }
