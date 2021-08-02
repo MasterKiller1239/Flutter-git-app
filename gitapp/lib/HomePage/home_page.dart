@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gitapp/HomePage/searchbar.dart';
 import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/users_list/user_card.dart';
 import 'package:gitapp/users_list/users_list.dart';
@@ -16,24 +17,23 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
   final UsersList users = UsersList();
-  final TextEditingController _textController = TextEditingController();
+
   bool connectionStatus = true;
   bool searching = false;
 
-  Future _getUsers(String text) async {
+  Future getUsers(String text) async {
     CheckConnection();
 
     if (text != "") {
       searching = true;
-      //users.fillSearchedUsers(text);
       await users.fetchUsers(text);
       setState(() {
-        _textController.clear();
+        searchBar.textController.clear();
         searching = false;
       });
     }
   }
-
+  late searchbar searchBar = new searchbar(getUsers);
   Future CheckConnection() async {
     ConnectivityResult connectivityResult =
         await (Connectivity().checkConnectivity());
@@ -47,28 +47,6 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
     });
   }
 
-  Widget _buildTextComposer() {
-    return IconTheme(
-        data: IconThemeData(color: Theme.of(context).accentColor),
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Row(children: <Widget>[
-            Flexible(
-              child: TextField(
-                controller: _textController,
-                cursorColor: cursorColor,
-                decoration: InputDecoration.collapsed(
-                    hintText: "Enter Github Username"),
-              ),
-            ),
-            Container(
-                margin: EdgeInsets.symmetric(horizontal: 4.0),
-                child: IconButton(
-                    icon: Icon(Icons.search),
-                    onPressed: () => _getUsers(_textController.text))),
-          ]),
-        ));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +58,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: Column(children: <Widget>[
           Container(
             decoration: BoxDecoration(color: Theme.of(context).cardColor),
-            child: _buildTextComposer(),
+            child: searchBar,
           ),
           Divider(height: 2.0),
           Flexible(
