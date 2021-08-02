@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/details_page.dart';
-import 'package:gitapp/users_list/user.dart';
+import 'package:gitapp/users_list/user_model.dart';
 
 class UserCard extends StatelessWidget {
   UserCard({
@@ -28,11 +28,13 @@ class UserCard extends StatelessWidget {
         ),
         child: Container(
           margin: EdgeInsets.only(bottom: 20.0),
-          child: RaisedButton(
-              color: secondaryLight,
+          child: ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DetailScreen(user: user.username)));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            DetailScreen(user: user.username)));
               },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 12.0),
@@ -58,7 +60,7 @@ class UserCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(user.username,
-                              style: Theme.of(context).textTheme.title),
+                              style: Theme.of(context).textTheme.headline2),
                           Padding(padding: EdgeInsets.only(bottom: 24.0)),
                         ],
                       ),
