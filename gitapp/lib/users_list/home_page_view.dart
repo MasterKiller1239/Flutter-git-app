@@ -19,6 +19,7 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
   final UsersList users = UsersList();
   late searchbar searchBar = new searchbar(getUsers);
+  final scrollController = ScrollController();
   bool connectionStatus = true;
   bool searching = false;
 
@@ -34,6 +35,27 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
         searching = false;
       });
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    scrollController.addListener(() async {
+      if (scrollController.position.pixels ==
+          scrollController.position.maxScrollExtent) {
+
+
+        await users.fetchMoreUsersFromApi();
+        setState(() {});
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
   }
 
   @override
@@ -61,6 +83,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           child: CircularProgressIndicator(),
                         )
                       : ListView.builder(
+                          controller: scrollController,
                           shrinkWrap: true,
                           padding: EdgeInsets.all(8.0),
                           itemBuilder: (context, int index) => UserCard(

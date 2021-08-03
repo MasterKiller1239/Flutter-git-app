@@ -4,10 +4,20 @@ import 'package:gitapp/users_list/user_model.dart';
 class UsersList {
   List<User> userList = List.empty(growable: true);
   List<User> searchedList = List.empty(growable: true);
+  int currentPage = 1;
+  String currentUsername = "";
 
   UsersList();
 
   Future<void> fetchUsersFromApi(String username) async {
     searchedList = await apiRepository.apirep.fetchUsers(username);
+    currentPage = 1;
+    currentUsername = username;
+  }
+
+  Future<void> fetchMoreUsersFromApi() async {
+    currentPage++;
+    searchedList.addAll(await apiRepository.apirep
+        .fetchUsers(currentUsername, page: currentPage));
   }
 }
