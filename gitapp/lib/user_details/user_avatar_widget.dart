@@ -17,18 +17,18 @@ class UserAvatarWidget extends StatelessWidget {
       children: <Widget> [
         Column(
           children: <Widget> [
-            Container(
-              height: 130.0,
-              width: 130.0,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(width: 3.0, color: yyellow),
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage(avatarUrl),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Hero(
+                tag: 'location-img-$username',
+                child: Image.network(
+                  avatarUrl,
+                  height: 150.0,
+                  width: 150.0,
                 ),
               ),
             ),
+
             SizedBox(height: 15.0),
             Text(
               username,
