@@ -17,7 +17,7 @@ class UserRepoWidget extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(10.0),
-          height: 60.0,
+          height: 70.0,
           width: 300.0,
           decoration: BoxDecoration(
             color: wwhite,

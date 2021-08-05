@@ -32,7 +32,7 @@ class UserCard extends StatelessWidget {
               color: secondaryLight,
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DetailScreen(user_id: user.id)));
+                    MaterialPageRoute(builder: (context) => DetailScreen(userId: user.id)));
               },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 12.0),

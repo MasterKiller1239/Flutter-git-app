@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
 import 'package:gitapp/user_details/user_details_model.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
 import "package:http/http.dart" as http;
@@ -19,36 +22,48 @@ List<UserRepo> getMockedRepos(String user) {
   return listRepos;
 }
 
-Future<UserDetails> getInfoFromAPI(int id_user) async {
+class Repos {
+  List<UserRepo> listRepos;
 
-  String httpadress =
-      "https://api.github.com/user/${id_user}";
-  http.Response response = await http.get(Uri.parse(httpadress));
-  if (response.statusCode == 200) {
-    var data = convert.jsonDecode(response.body);
-    return UserDetails.fromJSON(data);
-  } else {
-    return UserDetails(id: 0, avatarUrl: '', username: '', followersCount: 0, repositoriesCount: 0);
+  Repos({required this.listRepos});
+
+  factory Repos.fromJson(List<dynamic> json){
+    List<UserRepo> listRepos = <UserRepo>[];
+    listRepos = json.map((r) => UserRepo.fromJSON(r)).toList();
+    return Repos(listRepos: listRepos);
   }
-
 }
 
-Future<List<UserRepo>> getReposListFromAPI(int id_user) async {
+Future<Repos> getReposListFromAPI(int userId) async {
 
-  List<UserRepo> listRepos = [];
-
-  String httpadress =
-      "https://api.github.com/user/${id_user}/repos";
-  http.Response response = await http.get(Uri.parse(httpadress));
+  String url = "https://api.github.com/user/$userId/repos";
+  final response = await http.get(Uri.parse(url));
   if (response.statusCode == 200) {
-
-    var data = convert.jsonDecode(response.body);
-    data['items'].forEach((repo) {
-      listRepos.add(UserRepo.fromJSON(repo));
-    });
-    return listRepos;
+    return Repos.fromJson(json.decode(response.body));
   } else {
-    return listRepos;
+    throw Exception('Failed to get repos from API.');
   }
+}
 
+class Details {
+  late UserDetails userDetails;
+
+  Details({required this.userDetails});
+
+  factory Details.fromJson(Map<String, dynamic> json){
+    UserDetails userDetails = UserDetails(id: 0, avatarUrl: '', username: '', followersCount: 0, repositoriesCount: 0);
+    userDetails = UserDetails.fromJSON(json);
+    return Details(userDetails: userDetails);
+  }
+}
+
+Future<Details> getInfoFromAPI(int userId) async {
+
+  String url = "https://api.github.com/user/$userId";
+  final response = await http.get(Uri.parse(url));
+  if (response.statusCode == 200) {
+    return Details.fromJson(json.decode(response.body));
+  } else {
+    throw Exception('Failed to get repos from API.');
+  }
 }
