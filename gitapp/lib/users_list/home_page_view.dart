@@ -16,8 +16,8 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  final UsersList users = UsersList();
-  late searchbar searchBar = new searchbar(getUsers);
+  final UsersPresenter users = UsersPresenter();
+  late Searchbar searchBar = new Searchbar(getUsers);
   final scrollController = ScrollController();
   bool connectionStatus = true;
   bool searching = false;
@@ -50,6 +50,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       );
     } else
       return ListView.builder(
+        controller: scrollController,
         shrinkWrap: true,
         padding: EdgeInsets.all(8.0),
         itemBuilder: (context, int index) => UserCard(

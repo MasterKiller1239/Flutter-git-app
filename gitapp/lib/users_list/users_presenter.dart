@@ -11,14 +11,13 @@ class UsersPresenter {
 
   Future<void> fetchUsersFromApi(String username) async {
     searchedList = await ApiRepository.apirep.fetchUsers(username);
-    searchedList = await apiRepository.apirep.fetchUsers(username);
     currentPage = 1;
     currentUsername = username;
   }
 
   Future<void> fetchMoreUsersFromApi() async {
     currentPage++;
-    searchedList.addAll(await apiRepository.apirep
+    searchedList.addAll(await ApiRepository.apirep
         .fetchUsers(currentUsername, page: currentPage));
   }
 }

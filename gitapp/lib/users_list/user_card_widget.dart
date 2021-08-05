@@ -16,16 +16,7 @@ class UserCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SlideTransition(
-        position: Tween<Offset>(
-          begin: const Offset(-1.5, 0.0),
-          end: Offset.zero,
-        ).animate(
-          CurvedAnimation(
-            parent: animationController,
-            curve: Curves.linear,
-          ),
-        ),
+    return Container(
         child: Container(
           margin: EdgeInsets.only(bottom: 20.0),
           child: ElevatedButton(
