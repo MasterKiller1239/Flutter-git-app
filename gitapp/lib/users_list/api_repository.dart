@@ -17,7 +17,6 @@ class ApiRepository {
       data['items'].forEach((user) {
         listofUsers.add(User.fromJSON(user));
       });
-      return listofUsers;
     }
     return listofUsers;
   }
