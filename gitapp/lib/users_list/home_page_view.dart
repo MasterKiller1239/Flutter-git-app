@@ -24,7 +24,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Future getUsers(String text) async {
     connectionStatus = await Connection.instance.checkConnection();
     setState(() {});
-    if (text != ""||!connectionStatus) {
+    if (text != "" || !connectionStatus) {
       setState(() {
         searching = true;
       });
