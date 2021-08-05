@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 
-class searchbar extends StatefulWidget {
+class Searchbar extends StatefulWidget {
 
-  searchbar(this.getUsers);
+  Searchbar(this.getUsers);
   final Function(String) getUsers;
   final TextEditingController textController = new TextEditingController();
   @override
-  searchbarState createState() => searchbarState();
+  SearchbarState createState() => SearchbarState();
 }
 
-class searchbarState extends State<searchbar> {
+class SearchbarState extends State<Searchbar> {
 
 
   @override

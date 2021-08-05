@@ -1,15 +1,16 @@
 import 'package:gitapp/users_list/api_repository.dart';
 import 'package:gitapp/users_list/user_model.dart';
 
-class UsersList {
+class UsersPresenter {
   List<User> userList = List.empty(growable: true);
   List<User> searchedList = List.empty(growable: true);
   int currentPage = 1;
   String currentUsername = "";
 
-  UsersList();
+  UsersPresenter();
 
   Future<void> fetchUsersFromApi(String username) async {
+    searchedList = await ApiRepository.apirep.fetchUsers(username);
     searchedList = await apiRepository.apirep.fetchUsers(username);
     currentPage = 1;
     currentUsername = username;

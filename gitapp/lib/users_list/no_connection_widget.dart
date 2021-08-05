@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 
-class networkErrorView extends StatelessWidget {
+class NetworkErrorView extends StatelessWidget {
   final String message;
 
-  networkErrorView({required this.message});
+  NetworkErrorView({required this.message});
 
   @override
   Widget build(BuildContext context) {
