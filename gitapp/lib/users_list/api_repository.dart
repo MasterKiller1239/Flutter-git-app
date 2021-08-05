@@ -2,10 +2,10 @@ import 'package:gitapp/users_list/user_model.dart';
 import "package:http/http.dart" as http;
 import 'dart:convert' as convert;
 
-class apiRepository {
-  apiRepository();
+class ApiRepository {
+  ApiRepository();
 
-  static final apiRepository apirep = new apiRepository();
+  static final ApiRepository apirep = new ApiRepository();
 
   Future<List<User>> fetchUsers(String username) async {
     List<User> listofUsers = List.empty(growable: true);
