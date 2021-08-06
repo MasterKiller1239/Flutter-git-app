@@ -29,7 +29,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       setState(() {
         searching = true;
       });
-      await users.fetchUsersFromApi(text);
+      await users.updateSearchedListFromApi(text);
       setState(() {
         searchBar.textController.clear();
         searching = false;
@@ -38,7 +38,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       users.searchedList.clear();
   }
 
-  Widget widgetPicker() {
+  Widget chooseWidget() {
     if (!connectionStatus) {
       return Center(
         child: NetworkErrorView(
@@ -49,19 +49,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: CircularProgressIndicator(),
       );
     } else
-      return ListView.builder(
-        controller: scrollController,
-        shrinkWrap: true,
-        padding: EdgeInsets.all(8.0),
-        itemBuilder: (context, int index) => UserCard(
-          user: users.searchedList[index],
-          animationController: AnimationController(
-            duration: new Duration(milliseconds: animationTime),
-            vsync: this,
-          ),
-        ),
-        itemCount: users.searchedList.length,
-      );
+      return UserCards(users: users);
   }
 
   @override
@@ -98,7 +86,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
             child: searchBar,
           ),
           Divider(height: 2.0),
-          Flexible(child: widgetPicker()),
+          Flexible(child: chooseWidget()),
         ]),
       ),
     );
