@@ -4,7 +4,7 @@ import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_avatar_widget.dart';
 import 'package:gitapp/user_details/user_info_widget.dart';
 import 'package:gitapp/user_details/user_repos_list_widget.dart';
-import 'package:gitapp/user_details/user_details_presenter.dart';
+import 'package:gitapp/user_details/user_details_api_repository.dart';
 
 Future<ReposList> getReposList(int userId) async => await getReposListFromAPI(userId);
 Future<Details> getDetails(int userId) async => await getInfoFromAPI(userId);
@@ -44,7 +44,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     UserAvatarWidget(username: snapshot.data[0].userDetails.username, avatarUrl: snapshot.data[0].userDetails.avatarUrl),
                     UserInfoWidget(followersCount: snapshot.data[0].userDetails.followersCount, repositoriesCount: snapshot.data[0].userDetails.repositoriesCount),
                     Divider(height: 35.0, color: yyellow, indent: 30.0, endIndent: 30.0),
-                    UserReposWidget(listRepos: snapshot.data[1].listRepos),
+                    UserReposWidget(userId: widget.userId, listRepos: snapshot.data[1].listRepos)
                   ]
               );
             } else if(snapshot.hasError) {

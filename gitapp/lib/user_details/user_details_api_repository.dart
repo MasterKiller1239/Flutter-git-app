@@ -3,21 +3,8 @@ import 'package:gitapp/user_details/user_details_model.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
 import "package:http/http.dart" as http;
 
-UserDetails getMockedInfo(String user){
-  return UserDetails(id: 1, avatarUrl: 'https://i.kym-cdn.com/entries/icons/original/000/035/310/Peepo_Animation_Banner.jpg', username: user, followersCount: 43, repositoriesCount: 3, /*country: 'Poland'*/);
-}
+late int page;
 
-List<UserRepo> getMockedRepos(String user) {
-  List<UserRepo> listRepos = [
-    UserRepo(id: 1, name: 'flutterapp', url: 'https://github.com/${user}/flutterapp', stars: 1),
-    UserRepo(
-        id: 2, name: 'swiftapp', url: 'https://github.com/${user}/swiftapp', stars: 1),
-    UserRepo(
-        id: 3, name: 'kotlinapp', url: 'https://github.com/${user}/kotlinapp', stars: 1)
-  ];
-
-  return listRepos;
-}
 
 class ReposList {
 
@@ -35,10 +22,40 @@ class ReposList {
 
 Future<ReposList> getReposListFromAPI(int userId) async {
 
-  String url = "https://api.github.com/user/$userId/repos";
+  page = 1;
+
+  String url = "https://api.github.com/user/$userId/repos?per_page=3&page=$page";
   final response = await http.get(Uri.parse(url));
   if (response.statusCode == 200) {
     return ReposList.fromJson(json.decode(response.body));
+  } else {
+    throw Exception('Failed to get repos from API.');
+  }
+
+}
+
+class MoreReposList {
+
+  List<UserRepo> listRepos;
+
+  MoreReposList({required this.listRepos});
+
+  factory MoreReposList.fromJson(List<dynamic> json, List<UserRepo> currentList){
+    List<UserRepo> listRepos = currentList;
+    listRepos = json.map((r) => UserRepo.fromJSON(r)).toList();
+    return MoreReposList(listRepos: listRepos);
+  }
+
+}
+
+Future<MoreReposList> getMoreReposListFromAPI(int userId, List<UserRepo> currentList) async {
+
+  page++;
+
+  String url = "https://api.github.com/user/$userId/repos?per_page=2&page=$page";
+  final response = await http.get(Uri.parse(url));
+  if (response.statusCode == 200) {
+    return MoreReposList.fromJson(json.decode(response.body), currentList);
   } else {
     throw Exception('Failed to get repos from API.');
   }
