@@ -1,10 +1,7 @@
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
 import 'package:gitapp/user_details/user_details_model.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
 import "package:http/http.dart" as http;
-import 'dart:convert' as convert;
 
 UserDetails getMockedInfo(String user){
   return UserDetails(id: 1, avatarUrl: 'https://i.kym-cdn.com/entries/icons/original/000/035/310/Peepo_Animation_Banner.jpg', username: user, followersCount: 43, repositoriesCount: 3, /*country: 'Poland'*/);
@@ -12,40 +9,44 @@ UserDetails getMockedInfo(String user){
 
 List<UserRepo> getMockedRepos(String user) {
   List<UserRepo> listRepos = [
-    UserRepo(id: 1, name: 'flutterapp', url: 'https://github.com/${user}/flutterapp'),
+    UserRepo(id: 1, name: 'flutterapp', url: 'https://github.com/${user}/flutterapp', stars: 1),
     UserRepo(
-        id: 2, name: 'swiftapp', url: 'https://github.com/${user}/swiftapp'),
+        id: 2, name: 'swiftapp', url: 'https://github.com/${user}/swiftapp', stars: 1),
     UserRepo(
-        id: 3, name: 'kotlinapp', url: 'https://github.com/${user}/kotlinapp')
+        id: 3, name: 'kotlinapp', url: 'https://github.com/${user}/kotlinapp', stars: 1)
   ];
 
   return listRepos;
 }
 
-class Repos {
+class ReposList {
+
   List<UserRepo> listRepos;
 
-  Repos({required this.listRepos});
+  ReposList({required this.listRepos});
 
-  factory Repos.fromJson(List<dynamic> json){
+  factory ReposList.fromJson(List<dynamic> json){
     List<UserRepo> listRepos = <UserRepo>[];
     listRepos = json.map((r) => UserRepo.fromJSON(r)).toList();
-    return Repos(listRepos: listRepos);
+    return ReposList(listRepos: listRepos);
   }
+
 }
 
-Future<Repos> getReposListFromAPI(int userId) async {
+Future<ReposList> getReposListFromAPI(int userId) async {
 
   String url = "https://api.github.com/user/$userId/repos";
   final response = await http.get(Uri.parse(url));
   if (response.statusCode == 200) {
-    return Repos.fromJson(json.decode(response.body));
+    return ReposList.fromJson(json.decode(response.body));
   } else {
     throw Exception('Failed to get repos from API.');
   }
+
 }
 
 class Details {
+
   late UserDetails userDetails;
 
   Details({required this.userDetails});
@@ -55,6 +56,7 @@ class Details {
     userDetails = UserDetails.fromJSON(json);
     return Details(userDetails: userDetails);
   }
+
 }
 
 Future<Details> getInfoFromAPI(int userId) async {
@@ -66,4 +68,5 @@ Future<Details> getInfoFromAPI(int userId) async {
   } else {
     throw Exception('Failed to get repos from API.');
   }
+
 }

@@ -6,7 +6,7 @@ import 'package:gitapp/user_details/user_info_widget.dart';
 import 'package:gitapp/user_details/user_repos_list_widget.dart';
 import 'package:gitapp/user_details/user_details_presenter.dart';
 
-Future<Repos> getReposList(int userId) async => await getReposListFromAPI(userId);
+Future<ReposList> getReposList(int userId) async => await getReposListFromAPI(userId);
 Future<Details> getDetails(int userId) async => await getInfoFromAPI(userId);
 
 class DetailScreen extends StatefulWidget {

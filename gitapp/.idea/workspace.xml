@@ -26,13 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/HomePage/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/HomePage/home_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/details_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repo_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repo_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user_card.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626954618286</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Getting details from API nearly finished">
+      <created>1628167520991</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1628167520991</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +157,7 @@
     <MESSAGE value="- Added methods for mocked data" />
     <MESSAGE value="Merged FGA-7 with main" />
     <MESSAGE value="- Work in progress on methods for API" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Work in progress on methods for API" />
+    <MESSAGE value="Getting details from API nearly finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Getting details from API nearly finished" />
   </component>
 </project>

@@ -17,7 +17,7 @@ class UserRepoWidget extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(10.0),
-          height: 70.0,
+          height: 75.0,
           width: 300.0,
           decoration: BoxDecoration(
             color: wwhite,
@@ -25,9 +25,19 @@ class UserRepoWidget extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Text(
-                userRepo.name,
-                style: TextStyle(fontSize: 14.0, letterSpacing: 2.0, color: bblack),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    userRepo.name,
+                    style: TextStyle(fontSize: 14.0, letterSpacing: 2.0, color: bblack),
+                  ),
+                  Text(
+
+                    '⭐' + userRepo.stars.toString(),
+                    style: TextStyle(fontSize: 14.0, letterSpacing: 2.0, color: bblack),
+                  ),
+                ],
               ),
               Divider(height: 7.0, color: bblack),
               Text(
