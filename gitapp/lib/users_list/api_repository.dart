@@ -10,11 +10,8 @@ class ApiRepository {
   Future<List<User>> fetchUsers(String username, {int page = 1}) async {
     List<User> listofUsers = List.empty(growable: true);
     String httpAddress =
-        'https://api.github.com/search/users?q=$username&per_page=100';
-    http.Response response = await http.get(Uri.parse(httpAddress));
-    String httpaddress =
         'https://api.github.com/search/users?q=$username&page=$page';
-    http.Response response = await http.get(Uri.parse(httpaddress));
+    http.Response response = await http.get(Uri.parse(httpAddress));
     if (response.statusCode == 200) {
       var data = convert.jsonDecode(response.body);
       listofUsers =

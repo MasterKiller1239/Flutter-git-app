@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/users_list/searchbar_widget.dart';
-import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/users_list/connection_presenter.dart';
-import 'package:gitapp/users_list/user_card_widget.dart';
+import 'package:gitapp/users_list/user_cards_widget.dart';
 import 'package:gitapp/users_list/users_presenter.dart';
 import 'no_connection_widget.dart';
 
@@ -18,7 +17,6 @@ class HomePage extends StatefulWidget {
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
   final UsersPresenter users = UsersPresenter();
   late Searchbar searchBar = new Searchbar(getUsers);
-  final scrollController = ScrollController();
   bool connectionStatus = true;
   bool searching = false;
 
@@ -52,26 +50,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       return UserCards(users: users);
   }
 
-  @override
-  void initState() {
-    super.initState();
 
-    scrollController.addListener(() async {
-      if (scrollController.position.pixels ==
-          scrollController.position.maxScrollExtent) {
-
-
-        await users.fetchMoreUsersFromApi();
-        setState(() {});
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    scrollController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
