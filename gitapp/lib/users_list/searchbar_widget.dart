@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 
 class Searchbar extends StatefulWidget {
-
   Searchbar(this.getUsers);
+
   final Function(String) getUsers;
   final TextEditingController textController = new TextEditingController();
+
   @override
   SearchbarState createState() => SearchbarState();
 }
 
 class SearchbarState extends State<Searchbar> {
-
-
   @override
   Widget build(BuildContext context) {
     return IconTheme(
@@ -32,7 +31,8 @@ class SearchbarState extends State<Searchbar> {
                 margin: EdgeInsets.symmetric(horizontal: 4.0),
                 child: IconButton(
                     icon: Icon(Icons.search),
-                    onPressed: () => widget.getUsers(widget.textController.text))),
+                    onPressed: () =>
+                        widget.getUsers(widget.textController.text))),
           ]),
         ));
   }

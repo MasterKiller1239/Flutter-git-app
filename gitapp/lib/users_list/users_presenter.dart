@@ -7,7 +7,7 @@ class UsersPresenter {
 
   UsersPresenter();
 
-  Future<void> fetchUsersFromApi(String username) async {
+  Future<void> updateSearchedListFromApi(String username) async {
     searchedList = await ApiRepository.apirep.fetchUsers(username);
   }
 }
