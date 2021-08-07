@@ -72,8 +72,8 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
             itemBuilder: (context, int index) =>
                 UserCard(user: users.searchedList[index], animationController: AnimationController(
                   duration: new Duration(milliseconds: animationTime),
-                  vsync: this,
-                ),),
+                  vsync: this,),
+                ),
             itemCount: users.searchedList.length,
           )),
         ]),
