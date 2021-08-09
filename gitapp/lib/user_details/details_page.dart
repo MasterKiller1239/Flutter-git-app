@@ -10,7 +10,6 @@ Future<ReposList> getReposList(int userId) async => await getReposListFromAPI(us
 Future<Details> getDetails(int userId) async => await getInfoFromAPI(userId);
 
 class DetailScreen extends StatefulWidget {
-
   DetailScreen({required this.userId});
   final int userId;
 
@@ -19,7 +18,6 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -58,9 +56,6 @@ class _DetailScreenState extends State<DetailScreen> {
                       child: CircularProgressIndicator()
                   )
               );
-              // return Center(
-              //   child: CircularProgressIndicator(),
-              // );
             }
           },
         ),

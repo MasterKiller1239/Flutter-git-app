@@ -6,10 +6,8 @@ import 'package:gitapp/user_details/user_repo_model.dart';
 import 'package:gitapp/user_details/user_repo_widget.dart';
 
 class UserReposWidget extends StatefulWidget {
-
   final List<UserRepo> listRepos;
   final int userId;
-
 
   UserReposWidget({required this.listRepos, required this.userId});
 
@@ -18,7 +16,6 @@ class UserReposWidget extends StatefulWidget {
 }
 
 class _UserReposWidgetState extends State<UserReposWidget> {
-
   final scrollController = ScrollController();
 
   @override

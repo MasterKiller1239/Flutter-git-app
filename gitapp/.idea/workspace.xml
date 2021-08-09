@@ -26,9 +26,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/details_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_api_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_avatar_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_avatar_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_api_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_api_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repo_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repo_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" afterDir="false" />
     </list>
@@ -37,7 +42,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/probation/.android/avd/Pixel_5_API_30.avd]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>

@@ -1,5 +1,4 @@
 class UserRepo {
-
   final int id;
   final String name;
   final String url;
@@ -15,5 +14,4 @@ class UserRepo {
         stars: data['stargazers_count'] ?? ''
     );
   }
-
 }

@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 
 class UserAvatarWidget extends StatelessWidget {
-
   final String username;
   final String avatarUrl;
-
   UserAvatarWidget({required this.username, required this.avatarUrl});
 
   @override

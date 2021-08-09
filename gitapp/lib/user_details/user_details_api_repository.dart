@@ -5,9 +5,7 @@ import "package:http/http.dart" as http;
 
 late int page;
 
-
 class ReposList {
-
   List<UserRepo> listRepos;
 
   ReposList({required this.listRepos});
@@ -17,11 +15,9 @@ class ReposList {
     listRepos = json.map((r) => UserRepo.fromJSON(r)).toList();
     return ReposList(listRepos: listRepos);
   }
-
 }
 
 Future<ReposList> getReposListFromAPI(int userId) async {
-
   page = 1;
 
   String url = "https://api.github.com/user/$userId/repos?per_page=3&page=$page";
@@ -31,11 +27,9 @@ Future<ReposList> getReposListFromAPI(int userId) async {
   } else {
     throw Exception('Failed to get repos from API.');
   }
-
 }
 
 class MoreReposList {
-
   List<UserRepo> listRepos;
 
   MoreReposList({required this.listRepos});
@@ -45,11 +39,9 @@ class MoreReposList {
     listRepos = json.map((r) => UserRepo.fromJSON(r)).toList();
     return MoreReposList(listRepos: listRepos);
   }
-
 }
 
 Future<MoreReposList> getMoreReposListFromAPI(int userId, List<UserRepo> currentList) async {
-
   page++;
 
   String url = "https://api.github.com/user/$userId/repos?per_page=2&page=$page";
@@ -59,13 +51,10 @@ Future<MoreReposList> getMoreReposListFromAPI(int userId, List<UserRepo> current
   } else {
     throw Exception('Failed to get repos from API.');
   }
-
 }
 
 class Details {
-
   late UserDetails userDetails;
-
   Details({required this.userDetails});
 
   factory Details.fromJson(Map<String, dynamic> json){
@@ -73,11 +62,9 @@ class Details {
     userDetails = UserDetails.fromJSON(json);
     return Details(userDetails: userDetails);
   }
-
 }
 
 Future<Details> getInfoFromAPI(int userId) async {
-
   String url = "https://api.github.com/user/$userId";
   final response = await http.get(Uri.parse(url));
   if (response.statusCode == 200) {
@@ -85,5 +72,4 @@ Future<Details> getInfoFromAPI(int userId) async {
   } else {
     throw Exception('Failed to get repos from API.');
   }
-
 }
