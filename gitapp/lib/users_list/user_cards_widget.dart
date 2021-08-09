@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gitapp/users_list/connection_presenter.dart';
 import 'package:gitapp/users_list/user_card_widget.dart';
 import 'package:gitapp/users_list/users_presenter.dart';
 
@@ -20,7 +21,7 @@ class _UserCardsState extends State<UserCards> {
 
     scrollController.addListener(() async {
       if (scrollController.position.pixels ==
-          scrollController.position.maxScrollExtent) {
+          scrollController.position.maxScrollExtent && await Connection.instance.checkConnection()) {
         await widget.users.fetchMoreUsersFromApi();
         setState(() {});
       }
