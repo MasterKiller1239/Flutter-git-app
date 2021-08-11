@@ -25,7 +25,8 @@ class _UserReposWidgetState extends State<UserReposWidget> {
     scrollController.addListener(() async {
       if (scrollController.position.pixels ==
           scrollController.position.maxScrollExtent) {
-        await UserDetailsPresenter.userDetailsPresenter.getMoreRepositoriesList(widget.userId);
+        await UserDetailsPresenter.userDetailsPresenter
+            .getMoreRepositoriesList(widget.userId);
         setState(() {});
       }
     });
@@ -42,7 +43,7 @@ class _UserReposWidgetState extends State<UserReposWidget> {
     return Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget> [
+        children: <Widget>[
           Container(
             padding: EdgeInsets.all(4.0),
             child: Text(
@@ -65,11 +66,11 @@ class _UserReposWidgetState extends State<UserReposWidget> {
             child: ListView.builder(
               controller: scrollController,
               padding: EdgeInsets.all(8.0),
-              itemBuilder: (context, index) => UserRepoWidget(userRepo: widget.listRepos[index]),
+              itemBuilder: (context, index) =>
+                  UserRepoWidget(userRepo: widget.listRepos[index]),
               itemCount: widget.listRepos.length,
             ),
           ),
-        ]
-    );
+        ]);
   }
 }

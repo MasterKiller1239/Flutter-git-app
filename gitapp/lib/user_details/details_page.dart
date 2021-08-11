@@ -70,8 +70,8 @@ class _DetailScreenState extends State<DetailScreen> {
                         Center(
                             child: IconButton(
                                 icon: Icon(Icons.wifi_protected_setup),
-                                onPressed: () => setState(() {})
-                            ))]));
+                                onPressed: () => setState(() {})))
+                      ]));
             } else {
               return Container(
                   width: MediaQuery.of(context).size.width,

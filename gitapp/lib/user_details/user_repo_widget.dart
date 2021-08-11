@@ -29,12 +29,14 @@ class UserRepoWidget extends StatelessWidget {
                   Flexible(
                     child: Text(
                       userRepo.name,
-                      style: TextStyle(fontSize: 14.0, letterSpacing: 2.0, color: bblack),
+                      style: TextStyle(
+                          fontSize: 14.0, letterSpacing: 2.0, color: bblack),
                     ),
                   ),
                   Text(
                     '⭐' + userRepo.stars.toString(),
-                    style: TextStyle(fontSize: 14.0, letterSpacing: 2.0, color: bblack),
+                    style: TextStyle(
+                        fontSize: 14.0, letterSpacing: 2.0, color: bblack),
                   ),
                 ],
               ),
@@ -42,7 +44,8 @@ class UserRepoWidget extends StatelessWidget {
               Flexible(
                 child: Text(
                   userRepo.url,
-                  style: TextStyle(fontSize: 9.0, letterSpacing: 2.0, color: bblack),
+                  style: TextStyle(
+                      fontSize: 9.0, letterSpacing: 2.0, color: bblack),
                 ),
               ),
             ],

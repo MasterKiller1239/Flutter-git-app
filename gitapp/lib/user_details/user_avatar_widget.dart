@@ -12,9 +12,9 @@ class UserAvatarWidget extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget> [
+      children: <Widget>[
         Column(
-          children: <Widget> [
+          children: <Widget>[
             Container(
               height: 130.0,
               width: 130.0,

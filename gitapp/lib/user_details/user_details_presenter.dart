@@ -6,16 +6,19 @@ class UserDetailsPresenter {
   late int currentPage;
 
   UserDetailsPresenter();
-  static final UserDetailsPresenter userDetailsPresenter = new UserDetailsPresenter();
+  static final UserDetailsPresenter userDetailsPresenter =
+      new UserDetailsPresenter();
 
   Future<List<UserRepo>> getRepositoriesList(int userId) async {
     currentPage = 1;
-    listRepos = await UserDetailsRepository.userDetailsRepository.fetchRepositoriesList(userId, currentPage);
+    listRepos = await UserDetailsRepository.userDetailsRepository
+        .fetchRepositoriesList(userId, currentPage);
     return listRepos;
   }
 
   Future<void> getMoreRepositoriesList(int userId) async {
     currentPage++;
-    listRepos.addAll(await UserDetailsRepository.userDetailsRepository.fetchRepositoriesList(userId, currentPage));
+    listRepos.addAll(await UserDetailsRepository.userDetailsRepository
+        .fetchRepositoriesList(userId, currentPage));
   }
 }
