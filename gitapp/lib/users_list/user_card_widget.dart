@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
-import 'package:gitapp/user_details/details_page.dart';
+import 'package:gitapp/user_details/user_details_view.dart';
 import 'package:gitapp/users_list/user_model.dart';
 
 class UserCard extends StatelessWidget {
@@ -20,7 +20,7 @@ class UserCard extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => DetailScreen(user: user.username)));
+                    builder: (context) => DetailScreen(userId: user.id)));
           },
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 12.0),
