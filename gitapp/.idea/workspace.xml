@@ -26,9 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Added methods for mocked data">
-      <change afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_presenter.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/liked_users/liked_user_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_list_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitapp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/liked_users/liked_users_presenter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_presenter.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628684574012</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Work in progress on liking users">
+      <created>1628686223653</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1628686223653</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

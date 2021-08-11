@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
+import 'liked_users_model.dart';
+import 'liked_users_presenter.dart';
+
+Future<List<LikedUser>?> likedUsersList() async =>
+    await LikedUsersPresenter.likedUsersPresenter.getLikedUsersList();
 
 class LikedUsersWidget extends StatefulWidget {
   @override
@@ -9,15 +14,20 @@ class LikedUsersWidget extends StatefulWidget {
 
 class _LikedUsersWidgetState extends State<LikedUsersWidget> {
   @override
+  void initState() {
+    super.initState();
+    likedUsersList();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("User details"),
+        title: Text("Liked users"),
       ),
       body: SingleChildScrollView(
         child: FutureBuilder(
-          future: Future.wait(
-              [userDetails(widget.userId), repositoriesList(widget.userId)]),
+          future: likedUsersList(),
           builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
             if (snapshot.hasData) {
               return Column(children: [
