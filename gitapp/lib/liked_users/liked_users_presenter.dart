@@ -11,7 +11,7 @@ class LikedUsersPresenter {
     listLikedUsers.add(likedUser);
   }
 
-  Future<List<LikedUsers>> getLikedUsersList() async {
+  Future<List<LikedUser>> getLikedUsersList() async {
     return listLikedUsers;
   }
 }
