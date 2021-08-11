@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
-import 'package:gitapp/user_details/user_details_api_repository.dart';
+import 'package:gitapp/user_details/user_details_presenter.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
 import 'package:gitapp/user_details/user_repo_widget.dart';
 
@@ -25,7 +25,7 @@ class _UserReposWidgetState extends State<UserReposWidget> {
     scrollController.addListener(() async {
       if (scrollController.position.pixels ==
           scrollController.position.maxScrollExtent) {
-        await getMoreReposListFromAPI(widget.userId, widget.listRepos);
+        await UserDetailsPresenter.userDetailsPresenter.getMoreRepositoriesList(widget.userId);
         setState(() {});
       }
     });

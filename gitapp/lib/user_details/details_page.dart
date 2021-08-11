@@ -2,12 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_avatar_widget.dart';
+import 'package:gitapp/user_details/user_details_repository.dart';
 import 'package:gitapp/user_details/user_info_widget.dart';
+import 'package:gitapp/user_details/user_repo_model.dart';
+import 'package:gitapp/user_details/user_details_model.dart';
 import 'package:gitapp/user_details/user_repos_list_widget.dart';
-import 'package:gitapp/user_details/user_details_api_repository.dart';
+import 'package:gitapp/user_details/user_details_presenter.dart';
 
-Future<ReposList> getReposList(int userId) async => await getReposListFromAPI(userId);
-Future<Details> getDetails(int userId) async => await getInfoFromAPI(userId);
+Future<List<UserRepo>> repositoriesList(int userId) async => await UserDetailsPresenter.userDetailsPresenter.getRepositoriesList(userId);
+Future<UserDetails> userDetails(int userId) async => await UserDetailsRepository.userDetailsRepository.fetchUserDetails(userId);
+
 
 class DetailScreen extends StatefulWidget {
   DetailScreen({required this.userId});
@@ -21,8 +25,8 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   void initState() {
     super.initState();
-    getDetails(widget.userId);
-    getReposList(widget.userId);
+    userDetails(widget.userId);
+    repositoriesList(widget.userId);
   }
 
   @override
@@ -33,16 +37,16 @@ class _DetailScreenState extends State<DetailScreen> {
       ),
       body: SingleChildScrollView(
         child: FutureBuilder(
-          future: Future.wait([getDetails(widget.userId), getReposList(widget.userId)]),
+          future: Future.wait([userDetails(widget.userId), repositoriesList(widget.userId)]),
           builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
             if(snapshot.hasData) {
               return Column(
                   children: [
                     SizedBox(height: 20.0),
-                    UserAvatarWidget(username: snapshot.data[0].userDetails.username, avatarUrl: snapshot.data[0].userDetails.avatarUrl),
-                    UserInfoWidget(followersCount: snapshot.data[0].userDetails.followersCount, repositoriesCount: snapshot.data[0].userDetails.repositoriesCount),
+                    UserAvatarWidget(username: snapshot.data[0].username, avatarUrl: snapshot.data[0].avatarUrl),
+                    UserInfoWidget(followersCount: snapshot.data[0].followersCount, repositoriesCount: snapshot.data[0].repositoriesCount),
                     Divider(height: 35.0, color: yyellow, indent: 30.0, endIndent: 30.0),
-                    UserReposWidget(userId: widget.userId, listRepos: snapshot.data[1].listRepos)
+                    UserReposWidget(userId: widget.userId, listRepos: snapshot.data[1])
                   ]
               );
             } else if(snapshot.hasError) {

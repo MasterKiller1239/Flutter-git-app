@@ -4,7 +4,7 @@ import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
 
 class UserRepoWidget extends StatelessWidget {
-  late UserRepo userRepo;
+  final UserRepo userRepo;
   UserRepoWidget({required this.userRepo});
 
   @override

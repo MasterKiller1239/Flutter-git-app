@@ -26,16 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/user_details/user_details_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitapp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/details_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_avatar_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_avatar_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_api_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_api_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_info_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repo_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repo_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_api_repository.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/users_list/users_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/users_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +45,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Dart File" />
       </list>
     </option>
@@ -76,7 +76,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/user_details" />
     <property name="project.structure.last.edited" value="Modules" />
