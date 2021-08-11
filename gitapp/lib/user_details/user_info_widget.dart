@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
 
 class UserInfoWidget extends StatelessWidget {
-
   final int followersCount;
   final int repositoriesCount;
-  final String country;
-
-  UserInfoWidget({required this.followersCount, required this.repositoriesCount, required this.country});
+  UserInfoWidget({
+    required this.followersCount,
+    required this.repositoriesCount,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,8 @@ class UserInfoWidget extends StatelessWidget {
                 padding: EdgeInsets.all(4.0),
                 child: Text(
                   'INFO',
-                  style: TextStyle(fontSize: 20.0, color: yyellow, letterSpacing: 1.5),
+                  style: TextStyle(
+                      fontSize: 20.0, color: yyellow, letterSpacing: 1.5),
                 ),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6.0),
@@ -44,7 +45,8 @@ class UserInfoWidget extends StatelessWidget {
                       SizedBox(height: 5.0),
                       Text(
                         followersCount.toString(),
-                        style: TextStyle(fontSize: 11.0, letterSpacing: 1.0, color: yyellow),
+                        style: TextStyle(
+                            fontSize: 11.0, letterSpacing: 1.0, color: yyellow),
                       ),
                     ],
                   ),
@@ -58,21 +60,8 @@ class UserInfoWidget extends StatelessWidget {
                       SizedBox(height: 5.0),
                       Text(
                         repositoriesCount.toString(),
-                        style: TextStyle(fontSize: 11.0, letterSpacing: 1.0, color: yyellow),
-                      ),
-                    ],
-                  ),
-                  SizedBox(width: 10.0),
-                  Column(
-                    children: [
-                      Text(
-                        'Country',
-                        style: TextStyle(fontSize: 13.0, letterSpacing: 2.0),
-                      ),
-                      SizedBox(height: 5.0),
-                      Text(
-                        country,
-                        style: TextStyle(fontSize: 11.0, letterSpacing: 1.0, color: yyellow),
+                        style: TextStyle(
+                            fontSize: 11.0, letterSpacing: 1.0, color: yyellow),
                       ),
                     ],
                   ),
@@ -80,7 +69,6 @@ class UserInfoWidget extends StatelessWidget {
               ),
             ],
           ),
-        ]
-    );
+        ]);
   }
 }

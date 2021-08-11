@@ -1,18 +1,24 @@
-import 'package:gitapp/user_details/user_details_model.dart';
+import 'package:gitapp/user_details/user_details_repository.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
 
-UserDetails getMockedInfo(String user){
-  return UserDetails(id: 1, avatarUrl: 'https://i.kym-cdn.com/entries/icons/original/000/035/310/Peepo_Animation_Banner.jpg', username: user, followersCount: 43, repositoriesCount: 3, country: 'Poland');
-}
+class UserDetailsPresenter {
+  List<UserRepo> listRepos = <UserRepo>[];
+  late int currentPage;
 
-List<UserRepo> getMockedRepos(String user) {
-  List<UserRepo> listRepos = [
-    UserRepo(id: 1, name: 'flutterapp', url: 'https://github.com/${user}/flutterapp'),
-    UserRepo(
-        id: 2, name: 'swiftapp', url: 'https://github.com/${user}/swiftapp'),
-    UserRepo(
-        id: 3, name: 'kotlinapp', url: 'https://github.com/${user}/kotlinapp')
-  ];
+  UserDetailsPresenter();
+  static final UserDetailsPresenter userDetailsPresenter =
+      new UserDetailsPresenter();
 
-  return listRepos;
+  Future<List<UserRepo>> getRepositoriesList(int userId) async {
+    currentPage = 1;
+    listRepos = await UserDetailsRepository.userDetailsRepository
+        .fetchRepositoriesList(userId, currentPage);
+    return listRepos;
+  }
+
+  Future<void> getMoreRepositoriesList(int userId) async {
+    currentPage++;
+    listRepos.addAll(await UserDetailsRepository.userDetailsRepository
+        .fetchRepositoriesList(userId, currentPage));
+  }
 }

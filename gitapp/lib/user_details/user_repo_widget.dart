@@ -4,9 +4,7 @@ import 'package:gitapp/constants/constants.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
 
 class UserRepoWidget extends StatelessWidget {
-
-  late UserRepo userRepo;
-
+  final UserRepo userRepo;
   UserRepoWidget({required this.userRepo});
 
   @override
@@ -17,7 +15,7 @@ class UserRepoWidget extends StatelessWidget {
       children: [
         Container(
           padding: EdgeInsets.all(10.0),
-          height: 60.0,
+          height: 105.0,
           width: 300.0,
           decoration: BoxDecoration(
             color: wwhite,
@@ -25,14 +23,30 @@ class UserRepoWidget extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Text(
-                userRepo.name,
-                style: TextStyle(fontSize: 14.0, letterSpacing: 2.0, color: bblack),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Flexible(
+                    child: Text(
+                      userRepo.name,
+                      style: TextStyle(
+                          fontSize: 14.0, letterSpacing: 2.0, color: bblack),
+                    ),
+                  ),
+                  Text(
+                    '⭐' + userRepo.stars.toString(),
+                    style: TextStyle(
+                        fontSize: 14.0, letterSpacing: 2.0, color: bblack),
+                  ),
+                ],
               ),
               Divider(height: 7.0, color: bblack),
-              Text(
-                userRepo.url,
-                style: TextStyle(fontSize: 9.0, letterSpacing: 2.0, color: bblack),
+              Flexible(
+                child: Text(
+                  userRepo.url,
+                  style: TextStyle(
+                      fontSize: 9.0, letterSpacing: 2.0, color: bblack),
+                ),
               ),
             ],
           ),
