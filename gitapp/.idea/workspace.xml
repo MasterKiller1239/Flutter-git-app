@@ -26,15 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
-      <change afterPath="$PROJECT_DIR$/lib/user_details/user_details_presenter.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/user_details/user_details_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitapp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/details_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_api_repository.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repo_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_repos_list_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/users_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/users_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_repository.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +70,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/user_details" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -147,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628244662452</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Splitted user_details_api_repository.dart to user_details_presenter.dart and user_details_repository.dart. Paging for repositories list works.">
+      <created>1628667037134</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1628667037134</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,6 +172,7 @@
     <MESSAGE value="- Work in progress on methods for API" />
     <MESSAGE value="Getting details from API nearly finished" />
     <MESSAGE value="Added user stars for repos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added user stars for repos" />
+    <MESSAGE value="Splitted user_details_api_repository.dart to user_details_presenter.dart and user_details_repository.dart. Paging for repositories list works." />
+    <option name="LAST_COMMIT_MESSAGE" value="Splitted user_details_api_repository.dart to user_details_presenter.dart and user_details_repository.dart. Paging for repositories list works." />
   </component>
 </project>

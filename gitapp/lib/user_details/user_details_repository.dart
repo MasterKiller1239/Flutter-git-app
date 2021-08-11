@@ -13,7 +13,8 @@ class UserDetailsRepository {
     if (response.statusCode == 200) {
       return UserDetails.fromJSON(json.decode(response.body));
     } else {
-      return UserDetails(id: 0, avatarUrl: '', username: '', followersCount: 0, repositoriesCount: 0);
+      // return UserDetails(id: 0, avatarUrl: '', username: '', followersCount: 0, repositoriesCount: 0)
+      return UserDetails.fromJSON(json.decode(response.body));
     }
   }
 
@@ -26,7 +27,10 @@ class UserDetailsRepository {
       listRepos = data.map((r) => UserRepo.fromJSON(r)).toList();
       return listRepos;
     } else {
+      List<dynamic> data = json.decode(response.body);
+      listRepos = data.map((r) => UserRepo.fromJSON(r)).toList();
       return listRepos;
+      // return listRepos;
     }
   }
 }
