@@ -3,7 +3,7 @@ import 'package:gitapp/users_list/searchbar_widget.dart';
 import 'package:gitapp/users_list/connection_presenter.dart';
 import 'package:gitapp/users_list/user_cards_widget.dart';
 import 'package:gitapp/users_list/users_presenter.dart';
-import 'liked_users_home_widget.dart';
+import '../liked_users/liked_users_home_widget.dart';
 import 'no_connection_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -55,11 +55,18 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(widget.title),
+              LikeUsersHomeWidget(),
+            ],
+          )
+        )
       ),
       body: Container(
         child: Column(children: <Widget>[
-          LikeUsersHomeWidget(),
           Container(
             decoration: BoxDecoration(color: Theme.of(context).cardColor),
             child: searchBar,

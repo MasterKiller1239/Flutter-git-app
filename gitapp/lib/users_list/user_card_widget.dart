@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gitapp/constants/constants.dart';
+import 'package:gitapp/liked_users/liked_users_presenter.dart';
 import 'package:gitapp/user_details/user_details_view.dart';
 import 'package:gitapp/users_list/user_model.dart';
 
@@ -7,7 +8,6 @@ class UserCard extends StatelessWidget {
   UserCard({
     required this.user,
   });
-
   final User user;
 
   @override
@@ -45,9 +45,16 @@ class UserCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+                      IconButton(
+                          onPressed: () {
+                            LikedUsersPresenter.likedUsersPresenter
+                                .addLikedUser(
+                                    user.id, user.username, user.avatarURL);
+                          },
+                          icon: Text('⭐', style: TextStyle(fontSize: 25))),
                       Text(user.username,
                           style: Theme.of(context).textTheme.headline2),
-                      Padding(padding: EdgeInsets.only(bottom: 24.0)),
+                      Padding(padding: EdgeInsets.only(bottom: 24.0))
                     ],
                   ),
                 ),

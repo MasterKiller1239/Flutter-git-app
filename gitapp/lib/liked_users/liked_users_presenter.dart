@@ -3,11 +3,12 @@ import 'liked_users_model.dart';
 class LikedUsersPresenter {
   LikedUsersPresenter();
   static final LikedUsersPresenter likedUsersPresenter =
-  new LikedUsersPresenter();
+      new LikedUsersPresenter();
 
   final List<LikedUser> listLikedUsers = <LikedUser>[];
 
-  Future<void> addLikedUser(LikedUser likedUser) async {
+  Future<void> addLikedUser(int id, String name, String url) async {
+    LikedUser likedUser = LikedUser(id: id, name: name, url: url);
     listLikedUsers.add(likedUser);
   }
 

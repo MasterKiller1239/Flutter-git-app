@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gitapp/constants/no_network_widget.dart';
 import 'package:gitapp/liked_users/liked_users_list_widget.dart';
 import 'package:gitapp/users_list/connection_presenter.dart';
 import 'liked_users_model.dart';
@@ -31,39 +32,39 @@ class _LikedUsersWidgetState extends State<LikedUsersWidget> {
       appBar: AppBar(
         title: Text("Liked users"),
       ),
-      //body:
-      // SingleChildScrollView(
-      //   child: FutureBuilder(
-      //     future: Future.wait(
-      //     [checkConnection(), likedUsersList()]),
-      //     builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-      //       if (snapshot.hasData) {
-      //         return Column(children: [
-      //           SizedBox(height: 20.0),
-      //           LikedUsersListWidget(
-      //               //username: snapshot.data[0].username,
-      //               //avatarUrl: snapshot.data[0].avatarUrl),
-      //           )]);
-      //       } else if (snapshot.hasError) {
-      //         return Container(
-      //             height: 120.0,
-      //             child: Column(
-      //                 mainAxisAlignment: MainAxisAlignment.center,
-      //                 crossAxisAlignment: CrossAxisAlignment.center,
-      //                 children: [
-      //                   SizedBox(height: 40.0),
-      //                   Center(child: Text('Failed to fetch liked users.')),
-      //                   Center(
-      //                       child: IconButton(
-      //                           icon: Icon(Icons.wifi_protected_setup),
-      //                           onPressed: () => setState(() {})))
-      //                 ]));
-      //       } else {
-      //         return ProgressIndicatorWidget();
-      //       }
-      //     },
-      //   ),
-      // ),
+      body: SingleChildScrollView(
+        child: FutureBuilder(
+          future: Future.wait([checkConnection(), likedUsersList()]),
+          builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+            if (connectionStatus == false) {
+              return NoNetworkWidget();
+            } else if (snapshot.hasData) {
+              return Column(children: [
+                SizedBox(height: 20.0),
+                Center(
+                    child:
+                        LikedUsersListWidget(listLikedUsers: snapshot.data[1]))
+              ]);
+            } else if (snapshot.hasError) {
+              return Container(
+                  height: 120.0,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(height: 40.0),
+                        Center(child: Text('Failed to fetch liked users.')),
+                        Center(
+                            child: IconButton(
+                                icon: Icon(Icons.wifi_protected_setup),
+                                onPressed: () => setState(() {})))
+                      ]));
+            } else {
+              return ProgressIndicatorWidget();
+            }
+          },
+        ),
+      ),
     );
   }
 }

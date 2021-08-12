@@ -35,6 +35,11 @@ class _DetailScreenState extends State<DetailScreen> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -42,13 +47,15 @@ class _DetailScreenState extends State<DetailScreen> {
       ),
       body: SingleChildScrollView(
         child: FutureBuilder(
-          future: Future.wait(
-              [checkConnection(), userDetails(widget.userId), repositoriesList(widget.userId)]),
+          future: Future.wait([
+            checkConnection(),
+            userDetails(widget.userId),
+            repositoriesList(widget.userId)
+          ]),
           builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
             if (connectionStatus == false) {
               return NoNetworkWidget();
-            }
-            else if (snapshot.hasData) {
+            } else if (snapshot.hasData) {
               return UserDetailsViewSnapshotHasData(
                   widget: widget, snapshot: snapshot);
             } else if (snapshot.hasError) {
