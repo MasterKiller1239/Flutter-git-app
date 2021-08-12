@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gitapp/liked_users/liked_users_view.dart';
 import 'package:gitapp/users_list/searchbar_widget.dart';
 import 'package:gitapp/users_list/connection_presenter.dart';
 import 'package:gitapp/users_list/user_cards_widget.dart';
 import 'package:gitapp/users_list/users_presenter.dart';
+import 'liked_users_home_widget.dart';
 import 'no_connection_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -59,11 +59,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       body: Container(
         child: Column(children: <Widget>[
-          Center(
-              child: IconButton(
-                  icon: Icon(Icons.wifi_protected_setup),
-                  onPressed: () => LikedUsersWidget())
-          ),
+          LikeUsersHomeWidget(),
           Container(
             decoration: BoxDecoration(color: Theme.of(context).cardColor),
             child: searchBar,

@@ -26,8 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
+      <change afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_view_progress_indicator_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/users_list/liked_users_home_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/users_list/home_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/home_page_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user_card_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,6 +209,7 @@
     <MESSAGE value="Removed unnecessary comments." />
     <MESSAGE value="Reformat Code with Dartfmt" />
     <MESSAGE value="Extraced widgets form details view, changed name of details_page.dart to user_details_view.dart to match naming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extraced widgets form details view, changed name of details_page.dart to user_details_view.dart to match naming" />
+    <MESSAGE value="Added button for liked users list on home page, commented code to avoid errors for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added button for liked users list on home page, commented code to avoid errors for now" />
   </component>
 </project>
