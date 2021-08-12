@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LikeUsersViewProgressIndicator extends StatelessWidget {
-  const LikeUsersViewProgressIndicator({
+class ProgressIndicatorWidget extends StatelessWidget {
+  const ProgressIndicatorWidget({
     Key? key,
   }) : super(key: key);
 

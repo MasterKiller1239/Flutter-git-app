@@ -26,13 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
-      <change afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_view_progress_indicator_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/users_list/liked_users_home_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/home_page_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/home_page_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user_card_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/liked_users/liked_users_view_progress_indicator_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/progress_indicator_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_view_progress_indicator_widget.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/user_details" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/constants" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -85,6 +83,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/constants" />
       <recent name="$PROJECT_DIR$/lib/user_details" />
     </key>
   </component>
@@ -181,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628748474407</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added button for liked users list on home page, commented code to avoid errors for now">
+      <created>1628750988580</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1628750988580</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

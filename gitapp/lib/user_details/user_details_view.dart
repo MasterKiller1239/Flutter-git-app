@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gitapp/user_details/user_details_repository.dart';
-import 'package:gitapp/user_details/user_details_view_progress_indicator_widget.dart';
+import 'package:gitapp/constants/progress_indicator_widget.dart';
 import 'package:gitapp/user_details/user_details_view_snapshot_has_data_widget.dart';
 import 'package:gitapp/user_details/user_repo_model.dart';
 import 'package:gitapp/user_details/user_details_model.dart';
@@ -56,7 +56,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                 onPressed: () => setState(() {})))
                       ]));
             } else {
-              return UserDetailsViewProgressIndicator();
+              return ProgressIndicatorWidget();
             }
           },
         ),

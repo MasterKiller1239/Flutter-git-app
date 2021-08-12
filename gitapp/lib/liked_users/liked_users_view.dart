@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gitapp/liked_users/liked_users_list_widget.dart';
 import 'liked_users_model.dart';
 import 'liked_users_presenter.dart';
-import 'liked_users_view_progress_indicator_widget.dart';
+import 'package:gitapp/constants/progress_indicator_widget.dart';
 
 Future<List<LikedUser>> likedUsersList() async =>
     await LikedUsersPresenter.likedUsersPresenter.getLikedUsersList();
@@ -53,7 +53,7 @@ class _LikedUsersWidgetState extends State<LikedUsersWidget> {
       //                           onPressed: () => setState(() {})))
       //                 ]));
       //       } else {
-      //         return LikeUsersViewProgressIndicator();
+      //         return ProgressIndicatorWidget();
       //       }
       //     },
       //   ),
