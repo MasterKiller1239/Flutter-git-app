@@ -8,7 +8,6 @@ import 'package:gitapp/user_details/user_repo_model.dart';
 import 'package:gitapp/user_details/user_details_model.dart';
 import 'package:gitapp/user_details/user_details_presenter.dart';
 import 'package:gitapp/users_list/connection_presenter.dart';
-import 'package:gitapp/users_list/no_connection_widget.dart';
 
 Future<List<UserRepo>> repositoriesList(int userId) async =>
     await UserDetailsPresenter.userDetailsPresenter.getRepositoriesList(userId);

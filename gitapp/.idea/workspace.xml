@@ -26,11 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
-      <change afterPath="$PROJECT_DIR$/lib/constants/no_network_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_view_snapshot_has_data_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_view_snapshot_has_data_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user_card_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/constants" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -194,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628751405439</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added checking internet connection for user_details and liked_users">
+      <created>1628753510633</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1628753510633</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,6 +228,7 @@
     <MESSAGE value="Extraced widgets form details view, changed name of details_page.dart to user_details_view.dart to match naming" />
     <MESSAGE value="Added button for liked users list on home page, commented code to avoid errors for now" />
     <MESSAGE value="Removed progress indicator widgets for every package. Created one for everything in constants." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed progress indicator widgets for every package. Created one for everything in constants." />
+    <MESSAGE value="Added checking internet connection for user_details and liked_users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checking internet connection for user_details and liked_users" />
   </component>
 </project>
