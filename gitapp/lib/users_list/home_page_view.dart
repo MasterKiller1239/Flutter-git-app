@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  final UsersPresenter users = UsersPresenter();
+  final UsersPresenter presenter = UsersPresenter();
   late Searchbar searchBar = new Searchbar(getUsers);
   bool connectionStatus = true;
   bool searching = false;
@@ -27,13 +27,13 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
       setState(() {
         searching = true;
       });
-      await users.updateSearchedListFromApi(text);
+      await presenter.updateSearchedListFromApi(text);
       setState(() {
         searchBar.textController.clear();
         searching = false;
       });
     } else
-      users.searchedList.clear();
+      presenter.clearSearchList();
   }
 
   Widget chooseWidget() {
@@ -47,7 +47,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: CircularProgressIndicator(),
       );
     } else
-      return UserCards(users: users);
+      return UserCards(users: presenter);
   }
 
 

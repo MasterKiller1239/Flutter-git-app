@@ -20,4 +20,9 @@ class UsersPresenter {
     searchedList.addAll(await ApiRepository.apirep
         .fetchUsers(currentUsername, page: currentPage));
   }
+  void clearSearchList()
+  {
+    searchedList.clear();
+  }
+
 }
