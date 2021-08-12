@@ -26,13 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
-      <change afterPath="$PROJECT_DIR$/lib/user_details/user_details_view_progress_indicator_widget.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/user_details/user_details_view_snapshot_has_data_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_repository.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628670500235</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Extraced widgets form details view, changed name of details_page.dart to user_details_view.dart to match naming">
+      <created>1628748474407</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1628748474407</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -32,8 +32,7 @@ class UserDetailsRepository {
       List<dynamic> data = json.decode(response.body);
       listRepos = data.map((r) => UserRepo.fromJSON(r)).toList();
       return listRepos;
-    } else {
-      return listRepos;
     }
+    return listRepos;
   }
 }
