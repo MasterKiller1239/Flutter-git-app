@@ -1,12 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gitapp/liked_users/liked_users_list_widget.dart';
+import 'package:gitapp/users_list/connection_presenter.dart';
 import 'liked_users_model.dart';
 import 'liked_users_presenter.dart';
 import 'package:gitapp/constants/progress_indicator_widget.dart';
 
 Future<List<LikedUser>> likedUsersList() async =>
     await LikedUsersPresenter.likedUsersPresenter.getLikedUsersList();
+bool connectionStatus = true;
+Future<bool> checkConnection() async =>
+    connectionStatus = await Connection.instance.checkConnection();
 
 class LikedUsersWidget extends StatefulWidget {
   @override
@@ -17,6 +21,7 @@ class _LikedUsersWidgetState extends State<LikedUsersWidget> {
   @override
   void initState() {
     super.initState();
+    checkConnection();
     likedUsersList();
   }
 
@@ -29,7 +34,8 @@ class _LikedUsersWidgetState extends State<LikedUsersWidget> {
       //body:
       // SingleChildScrollView(
       //   child: FutureBuilder(
-      //     future: likedUsersList(),
+      //     future: Future.wait(
+      //     [checkConnection(), likedUsersList()]),
       //     builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
       //       if (snapshot.hasData) {
       //         return Column(children: [

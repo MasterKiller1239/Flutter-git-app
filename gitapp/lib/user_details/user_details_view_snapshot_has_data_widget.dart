@@ -20,18 +20,18 @@ class UserDetailsViewSnapshotHasData extends StatelessWidget {
     return Column(children: [
       SizedBox(height: 20.0),
       UserAvatarWidget(
-          username: snapshot.data[0].username,
-          avatarUrl: snapshot.data[0].avatarUrl),
+          username: snapshot.data[1].username,
+          avatarUrl: snapshot.data[1].avatarUrl),
       UserInfoWidget(
-          followersCount: snapshot.data[0].followersCount,
-          repositoriesCount: snapshot.data[0].repositoriesCount),
+          followersCount: snapshot.data[1].followersCount,
+          repositoriesCount: snapshot.data[1].repositoriesCount),
       Divider(
           height: 35.0,
           color: yyellow,
           indent: 30.0,
           endIndent: 30.0),
       UserReposWidget(
-          userId: widget.userId, listRepos: snapshot.data[1])
+          userId: widget.userId, listRepos: snapshot.data[2])
     ]);
   }
 }

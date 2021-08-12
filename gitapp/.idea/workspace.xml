@@ -26,11 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
+      <change afterPath="$PROJECT_DIR$/lib/constants/no_network_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/liked_users/liked_users_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/liked_users/liked_users_view_progress_indicator_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/progress_indicator_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_view.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_view.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_view_progress_indicator_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/user_details_view_snapshot_has_data_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_view_snapshot_has_data_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628750988580</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Removed progress indicator widgets for every package. Created one for everything in constants.">
+      <created>1628751405439</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1628751405439</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +223,7 @@
     <MESSAGE value="Reformat Code with Dartfmt" />
     <MESSAGE value="Extraced widgets form details view, changed name of details_page.dart to user_details_view.dart to match naming" />
     <MESSAGE value="Added button for liked users list on home page, commented code to avoid errors for now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added button for liked users list on home page, commented code to avoid errors for now" />
+    <MESSAGE value="Removed progress indicator widgets for every package. Created one for everything in constants." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed progress indicator widgets for every package. Created one for everything in constants." />
   </component>
 </project>
