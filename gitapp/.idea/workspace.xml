@@ -26,7 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Work in progress on methods for API">
+      <change afterPath="$PROJECT_DIR$/lib/user_details/user_details_view_progress_indicator_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/user_details/user_details_view_snapshot_has_data_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/user_details/details_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/user_details/user_details_view.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/users_list/user_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user_card.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,6 +201,7 @@
     <MESSAGE value="Errors handled user friendly." />
     <MESSAGE value="Removed unnecessary comments." />
     <MESSAGE value="Reformat Code with Dartfmt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformat Code with Dartfmt" />
+    <MESSAGE value="Extraced widgets form details view, changed name of details_page.dart to user_details_view.dart to match naming" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extraced widgets form details view, changed name of details_page.dart to user_details_view.dart to match naming" />
   </component>
 </project>
