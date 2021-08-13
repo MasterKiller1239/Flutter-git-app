@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gitapp/constants/states.dart';
 import 'package:gitapp/users_list/searchbar_widget.dart';
-import 'package:gitapp/users_list/connection_presenter.dart';
 import 'package:gitapp/users_list/user_cards_widget.dart';
 import 'package:gitapp/users_list/users_presenter.dart';
 import 'no_connection_widget.dart';
@@ -15,42 +15,40 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> with TickerProviderStateMixin {
-  final UsersPresenter presenter = UsersPresenter();
   late Searchbar searchBar = new Searchbar(getUsers);
-  bool connectionStatus = true;
-  bool searching = false;
+  AppState appState = AppState.updated;
 
   Future getUsers(String text) async {
-    connectionStatus = await Connection.instance.checkConnection();
     setState(() {});
-    if (text != "" || !connectionStatus) {
+    if (text != "") {
       setState(() {
-        searching = true;
+        appState = AppState.searching;
       });
-      await presenter.updateSearchedListFromApi(text);
+      appState = await UsersPresenter.presenter.updateSearchedListFromApi(text);
+      setState(() {});
+    } else {
       setState(() {
-        searchBar.textController.clear();
-        searching = false;
+        appState = AppState.updated;
+        UsersPresenter.presenter.clearSearchList();
       });
-    } else
-      presenter.clearSearchList();
+    }
   }
 
   Widget chooseWidget() {
-    if (!connectionStatus) {
-      return Center(
-        child: NetworkErrorView(
-            message: 'No Internet Connection.\nMind Trying again?'),
-      );
-    } else if (searching) {
-      return Center(
-        child: CircularProgressIndicator(),
-      );
-    } else
-      return UserCards(users: presenter);
+    switch (appState) {
+      case AppState.updated:
+        return UserCards(users: UsersPresenter.presenter);
+      case AppState.searching:
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      case AppState.noConnection:
+        return Center(
+          child: NetworkErrorView(
+              message: 'No Internet Connection.\nMind Trying again?'),
+        );
+    }
   }
-
-
 
   @override
   Widget build(BuildContext context) {
