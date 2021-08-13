@@ -22,7 +22,7 @@ class SearchbarState extends State<Searchbar> {
             Flexible(
               child: TextField(
                 controller: widget.textController,
-                onSubmitted:widget.getUsers,
+                onSubmitted: widget.getUsers,
                 cursorColor: cursorColor,
                 decoration: InputDecoration.collapsed(
                     hintText: "Enter Github Username"),

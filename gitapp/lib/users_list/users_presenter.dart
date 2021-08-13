@@ -10,22 +10,18 @@ class UsersPresenter {
   int currentPage = 1;
   String currentUsername = "";
   static final UsersPresenter presenter = new UsersPresenter();
+
   UsersPresenter();
 
   Future<AppState> updateSearchedListFromApi(String username) async {
-
-    if(await Connection.instance.checkConnection()==false)
-      {
-        return AppState.noConnection;
-      }
-    else
-      {
-        searchedList = await ApiRepository.apirep.fetchUsers(username);
-        currentPage = 1;
-        currentUsername = username;
-        return AppState.updated;
-      }
-
+    if (await Connection.instance.checkConnection() == false) {
+      return AppState.noConnection;
+    } else {
+      searchedList = await ApiRepository.apirep.fetchUsers(username);
+      currentPage = 1;
+      currentUsername = username;
+      return AppState.updated;
+    }
   }
 
   Future<void> fetchMoreUsersFromApi() async {
@@ -33,9 +29,8 @@ class UsersPresenter {
     searchedList.addAll(await ApiRepository.apirep
         .fetchUsers(currentUsername, page: currentPage));
   }
-  void clearSearchList()
-  {
+
+  void clearSearchList() {
     searchedList.clear();
   }
-
 }
