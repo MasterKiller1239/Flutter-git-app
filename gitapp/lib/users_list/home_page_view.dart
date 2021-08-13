@@ -34,7 +34,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
     }
   }
 
-  Widget chooseWidget() {
+  Widget chooseWidgetBasedOnState() {
     switch (appState) {
       case AppState.updated:
         return UserCards(users: UsersPresenter.presenter);
@@ -63,7 +63,7 @@ class HomePageState extends State<HomePage> with TickerProviderStateMixin {
             child: searchBar,
           ),
           Divider(height: 2.0),
-          Flexible(child: chooseWidget()),
+          Flexible(child: chooseWidgetBasedOnState()),
         ]),
       ),
     );
