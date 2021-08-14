@@ -26,13 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f1c59e-e1b3-4bc1-987f-972c29840ef9" name="Default Changelist" comment="- Added methods for mocked data">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/users_list/user_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/user_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/users_list/users_presenter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/users_list/users_presenter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,14 +185,14 @@
     <state width="1376" height="233" key="GridCell.Tab.0.right/0.25.1920.972@0.25.1920.972" timestamp="1626094084311" />
     <state width="1425" height="268" key="GridCell.Tab.0.right/0.25.1920.973/-1440.205.1440.875@0.25.1920.973" timestamp="1626889488992" />
     <state width="1362" height="242" key="GridCell.Tab.0.right/0.25.1920.975/-1440.205.1440.875@0.25.1920.975" timestamp="1626210848331" />
-    <state x="184" y="86" key="MergeDialog" timestamp="1628235339919">
+    <state x="184" y="86" key="MergeDialog" timestamp="1628941439839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628235339919" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1628235343301">
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628941439839" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1628941443940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628235343301" />
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628941443940" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1628185916412">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

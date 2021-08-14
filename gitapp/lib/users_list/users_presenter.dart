@@ -15,11 +15,7 @@ class UsersPresenter {
 
   UsersPresenter();
 
-  Future<void> updateSearchedListFromApi(String username) async {
-    searchedList = await ApiRepository.apirep.fetchUsers(username);
-    await sendUsersToDB();
-    currentPage = 1;
-    currentUsername = username;
+
   Future<AppState> updateSearchedListFromApi(String username) async {
     if (await Connection.instance.checkConnection() == false) {
       return AppState.noConnection;
@@ -27,6 +23,7 @@ class UsersPresenter {
       searchedList = await ApiRepository.apirep.fetchUsers(username);
       currentPage = 1;
       currentUsername = username;
+      await sendUsersToDB();
       return AppState.updated;
     }
   }
